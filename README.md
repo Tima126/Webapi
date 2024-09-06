@@ -1,8 +1,4 @@
-# Webapi
- ![Логотип](https://cdn-icons-png.flaticon.com/512/297/297396.png "Логотип GitHub")
 # Web API на C#
-
-![Логотип](https://cdn-icons-png.flaticon.com/512/297/297396.png "Логотип GitHub")
 
 ## 1. Что такое Web API?
 
