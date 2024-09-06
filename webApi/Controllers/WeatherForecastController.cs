@@ -38,17 +38,20 @@ namespace webApi.Controllers
 
         [HttpPost]
         public IActionResult Add(string name)
-        {
-            Summaries.Add(name);
-            return Ok();
-        }
+         {
+             if (Regex.IsMatch(name, @"^[Р°-СЏРђ-РЇС‘РЃa-zA-Z]+$"))
+             {
+                 Summaries.Add(name);
+             }
+                 return Ok();    
+         }
 
         [HttpPut]
         public IActionResult Update(int index, string name)
         {
             if (index<0 || index>=Summaries.Count)
             {
-                return BadRequest("Индекс не может быть отрицательным или больше количества элементов количество элементов " + Summaries.Count);
+                return BadRequest("Г€Г­Г¤ГҐГЄГ± Г­ГҐ Г¬Г®Г¦ГҐГІ ГЎГ»ГІГј Г®ГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г»Г¬ ГЁГ«ГЁ ГЎГ®Г«ГјГёГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў " + Summaries.Count);
             }
             Summaries[index] = name;
             return Ok();
@@ -60,7 +63,7 @@ namespace webApi.Controllers
         {
             if (index < 0 || index >= Summaries.Count)
             {
-                return BadRequest("Индекс не может быть отрицательным или больше количества элементов количество элементов " + Summaries.Count);
+                return BadRequest("Г€Г­Г¤ГҐГЄГ± Г­ГҐ Г¬Г®Г¦ГҐГІ ГЎГ»ГІГј Г®ГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г»Г¬ ГЁГ«ГЁ ГЎГ®Г«ГјГёГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў " + Summaries.Count);
             }
             Summaries.RemoveAt(index);
             return Ok();
