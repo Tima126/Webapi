@@ -1,0 +1,15 @@
+D:\webApi\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+D:\webApi\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+D:\webApi\DataAccess\bin\Debug\net8.0\DataAccess.dll
+D:\webApi\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.dll
+D:\webApi\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+D:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+D:\webApi\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
