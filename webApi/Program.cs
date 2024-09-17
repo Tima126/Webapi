@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using WebApi_ModelsCons_.Models;
+using Microsoft.OpenApi.Models;
 
 namespace webApi
 {
@@ -7,12 +10,35 @@ namespace webApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
 
+
+
+            builder.Services.AddCors(o => o.AddPolicy("MyPolicy", bulder =>
+            {
+                bulder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+
+            }));
+
+
+
+
+
+
+
+            builder.Services.AddDbContext<FlowersStoreContext>(
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Add services to the container.
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+            // Настройка Swagger/OpenAPI
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
+            });
 
             var app = builder.Build();
 
@@ -20,14 +46,16 @@ namespace webApi
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API V1");
+                });
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
-
+            app.UseCors("MyPolicy");
             app.MapControllers();
 
             app.Run();
