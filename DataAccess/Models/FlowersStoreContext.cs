@@ -29,7 +29,7 @@ public partial class FlowersStoreContext : DbContext
 
     public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
-    public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
+    public virtual DbSet<OrderStatus> OrderStatuse { get; set; }
 
     public virtual DbSet<Payment> Payments { get; set; }
 
@@ -48,7 +48,6 @@ public partial class FlowersStoreContext : DbContext
     public virtual DbSet<Wishlist> Wishlists { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=TIMA;Database=Flowers_store;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

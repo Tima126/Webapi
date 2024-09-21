@@ -5,6 +5,8 @@ namespace DataAccess.Models;
 
 public partial class Notification
 {
+    internal object Users;
+
     public int NotificationId { get; set; }
 
     public int? UserId { get; set; }
