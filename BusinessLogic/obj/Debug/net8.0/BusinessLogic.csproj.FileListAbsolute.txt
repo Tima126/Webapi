@@ -1,0 +1,16 @@
+D:\webApi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.deps.json
+D:\webApi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.dll
+D:\webApi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.pdb
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.sourcelink.json
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.dll
+D:\webApi\BusinessLogic\obj\Debug\net8.0\refint\BusinessLogic.dll
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.pdb
+D:\webApi\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll
+D:\webApi\BusinessLogic\bin\Debug\net8.0\DataAccess.dll
+D:\webApi\BusinessLogic\bin\Debug\net8.0\DataAccess.pdb
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
+D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CopyComplete

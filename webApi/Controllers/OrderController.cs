@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebApi_ModelsCons_.Models;
+using DataAccess.Models;
 
 namespace webApi.Controllers
 {

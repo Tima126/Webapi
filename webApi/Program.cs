@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using WebApi_ModelsCons_.Models;
+
 using Microsoft.OpenApi.Models;
+using DataAccess.Models;
 
 namespace webApi
 {
