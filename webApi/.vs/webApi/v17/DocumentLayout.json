@@ -1,0 +1,534 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\suppliercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\suppliercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\reviwecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\reviwecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\paymentmetodscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\paymentmetodscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\models\\flowersstorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\orderstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\orderstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\notificationtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\notificationtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\categoricontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\categoricontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\controllers\\addrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:controllers\\addrescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AF41B6-13DD-4C18-B0F3-0809176AFE2A}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\timaf\\documents\\github\\webapi\\businesslogic\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AF41B6-13DD-4C18-B0F3-0809176AFE2A}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\timaf\\documents\\github\\webapi\\businesslogic\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\interfaces\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\wrapper\\repositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\wrapper\\irepositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0228E72A-5ABA-47E0-846A-660B22DDFCBC}|..\\DataAccess\\DataAccess.csproj|c:\\users\\timaf\\documents\\github\\webapi\\dataaccess\\dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|c:\\users\\timaf\\documents\\github\\webapi\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{98DAE6E6-A3F8-4422-A5D9-72B3AC9BC4A4}|webApi.csproj|solutionrelative:webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C202FAA-D520-40A4-A23A-8AA368FE2626}|..\\Domain\\Domain.csproj|c:\\users\\timaf\\documents\\github\\webapi\\domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AF41B6-13DD-4C18-B0F3-0809176AFE2A}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\timaf\\documents\\github\\webapi\\businesslogic\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\WeatherForecast.cs",
+              "RelativeToolTip": "WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReviweController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\ReviweController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReviweController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\ReviweController.cs",
+              "RelativeToolTip": "Controllers\\ReviweController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WishlistController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\WishlistController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WishlistController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\WishlistController.cs",
+              "RelativeToolTip": "Controllers\\WishlistController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FlowersStoreContext.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Models\\FlowersStoreContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Models\\FlowersStoreContext.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Models\\FlowersStoreContext.cs",
+              "RelativeToolTip": "..\\DataAccess\\Models\\FlowersStoreContext.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SupplierController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\SupplierController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SupplierController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\SupplierController.cs",
+              "RelativeToolTip": "Controllers\\SupplierController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderStatusController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\OrderStatusController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderStatusController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\OrderStatusController.cs",
+              "RelativeToolTip": "Controllers\\OrderStatusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderDetailsController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\OrderDetailsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderDetailsController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\OrderDetailsController.cs",
+              "RelativeToolTip": "Controllers\\OrderDetailsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PaymentMetodsController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\PaymentMetodsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentMetodsController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\PaymentMetodsController.cs",
+              "RelativeToolTip": "Controllers\\PaymentMetodsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NotificationTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\NotificationTypeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationTypeController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\NotificationTypeController.cs",
+              "RelativeToolTip": "Controllers\\NotificationTypeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "Controllers\\NotificationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CategoriController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\CategoriController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\CategoriController.cs",
+              "RelativeToolTip": "Controllers\\CategoriController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddresController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\AddresController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AddresController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\AddresController.cs",
+              "RelativeToolTip": "Controllers\\AddresController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Repository\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repository\\RepositoryBase.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Repository\\RepositoryBase.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repository\\RepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\UserService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowDUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DiscountController.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\DiscountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DiscountController.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\Controllers\\DiscountController.cs",
+              "RelativeToolTip": "Controllers\\DiscountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repository\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IRepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\interfaces\\IRepositoryBase.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\interfaces\\IRepositoryBase.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\interfaces\\IRepositoryBase.cs",
+              "RelativeToolTip": "..\\DataAccess\\interfaces\\IRepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "RelativeToolTip": "..\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IRepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "RelativeToolTip": "..\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Class1.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\Class1.cs",
+              "RelativeToolTip": "..\\DataAccess\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "webApi.csproj",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\webApi.csproj",
+              "RelativeDocumentMoniker": "webApi.csproj",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\webApi.csproj",
+              "RelativeToolTip": "webApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-21T16:00:45.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DataAccess.csproj",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj",
+              "RelativeDocumentMoniker": "..\\DataAccess\\DataAccess.csproj",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj",
+              "RelativeToolTip": "..\\DataAccess\\DataAccess.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-21T16:00:45.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\Domain\\Class1.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Class1.cs",
+              "RelativeToolTip": "..\\Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Class1.cs",
+              "ToolTip": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\Class1.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:00:45.589Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
