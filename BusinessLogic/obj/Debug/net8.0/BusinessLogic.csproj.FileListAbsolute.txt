@@ -17,8 +17,6 @@ D:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CopyComplete
 C:\webApi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.deps.json
 C:\webApi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.dll
 C:\webApi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.pdb
-C:\webApi\BusinessLogic\bin\Debug\net8.0\DataAccess.dll
-C:\webApi\BusinessLogic\bin\Debug\net8.0\DataAccess.pdb
 C:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
 C:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
 C:\webApi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
@@ -46,3 +44,5 @@ C:\Users\timaf\Documents\GitHub\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLo
 C:\Users\timaf\Documents\GitHub\Webapi\BusinessLogic\obj\Debug\net8.0\refint\BusinessLogic.dll
 C:\Users\timaf\Documents\GitHub\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.pdb
 C:\Users\timaf\Documents\GitHub\Webapi\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll
+C:\webApi\BusinessLogic\bin\Debug\net8.0\Domain.dll
+C:\webApi\BusinessLogic\bin\Debug\net8.0\Domain.pdb

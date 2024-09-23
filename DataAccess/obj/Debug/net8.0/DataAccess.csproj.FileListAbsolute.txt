@@ -46,3 +46,6 @@ C:\Users\timaf\Documents\GitHub\Webapi\DataAccess\obj\Debug\net8.0\refint\DataAc
 C:\Users\timaf\Documents\GitHub\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 C:\Users\timaf\Documents\GitHub\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
 C:\Users\timaf\Documents\GitHub\Webapi\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\webApi\DataAccess\bin\Debug\net8.0\Domain.dll
+C:\webApi\DataAccess\bin\Debug\net8.0\Domain.pdb
+C:\webApi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CopyComplete
