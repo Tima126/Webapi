@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\webApi.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\obj\\",
+=======
+    "C:\\webApi\\webApi\\webApi.csproj": {}
+  },
+  "projects": {
+    "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
+        "projectName": "BusinessLogic",
+        "projectPath": "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
+        "outputPath": "C:\\webApi\\BusinessLogic\\obj\\",
+>>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +43,13 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj"
+=======
+              "C:\\webApi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\webApi\\Domain\\Domain.csproj"
+>>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
               }
             }
           }
@@ -69,6 +88,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -77,6 +97,87 @@
         "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\obj\\",
+=======
+    "C:\\webApi\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\webApi\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\webApi\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
+        "outputPath": "C:\\webApi\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\webApi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\webApi\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0-rc.1.24451.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0-rc.1.24451.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\webApi\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\webApi\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\webApi\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
+        "outputPath": "C:\\webApi\\Domain\\obj\\",
+>>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -142,6 +243,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\webApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -150,6 +252,16 @@
         "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\webApi.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\obj\\",
+=======
+    "C:\\webApi\\webApi\\webApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\webApi\\webApi\\webApi.csproj",
+        "projectName": "webApi",
+        "projectPath": "C:\\webApi\\webApi\\webApi.csproj",
+        "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
+        "outputPath": "C:\\webApi\\webApi\\obj\\",
+>>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -167,8 +279,16 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\BusinessLogic.csproj": {
                 "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\BusinessLogic.csproj"
+=======
+              "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj"
+              },
+              "C:\\webApi\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\webApi\\DataAccess\\DataAccess.csproj"
+>>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
               }
             }
           }

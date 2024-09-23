@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using DataAccess.Models;
+using Domain.Models;
 
 namespace webApi.Controllers
 {
@@ -19,7 +19,7 @@ namespace webApi.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<OrderStatus> orderStatuses = Context.OrderStatuses.ToList();
+            List<OrderStatus> orderStatuses = Context.OrderStatus.ToList();
             return Ok(orderStatuses);
 
         }
@@ -29,7 +29,7 @@ namespace webApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetByid(int id)
         {
-            OrderStatus? orderStatuses = Context.OrderStatuses.Where(x => x.StatusId == id).FirstOrDefault();
+            OrderStatus? orderStatuses = Context.OrderStatus.Where(x => x.StatusId == id).FirstOrDefault();
             if (orderStatuses == null)
             {
                 return BadRequest("Not Found");
@@ -40,7 +40,7 @@ namespace webApi.Controllers
         [HttpPost]
         public IActionResult Add(OrderStatus orderStatuses)
         {
-            Context.OrderStatuses.Add(orderStatuses);
+            Context.OrderStatus.Add(orderStatuses);
             Context.SaveChanges();
             return Ok(orderStatuses);
         }
@@ -49,7 +49,7 @@ namespace webApi.Controllers
         [HttpPut]
         public IActionResult Update(OrderStatus orderStatuses)
         {
-            Context.OrderStatuses.Update(orderStatuses);
+            Context.OrderStatus.Update(orderStatuses);
             Context.SaveChanges();
             return Ok();
         }
@@ -59,12 +59,12 @@ namespace webApi.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            OrderStatus? OrderStatus = Context.OrderStatuses.Where(x => x.StatusId == id).FirstOrDefault();
+            OrderStatus? OrderStatus = Context.OrderStatus.Where(x => x.StatusId == id).FirstOrDefault();
             if (OrderStatus == null)
             {
                 return BadRequest("Not Found");
             }
-            Context.OrderStatuses.Remove(OrderStatus);
+            Context.OrderStatus.Remove(OrderStatus);
             Context.SaveChanges();
             return Ok();
         }

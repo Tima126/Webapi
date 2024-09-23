@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using DataAccess.Models;
+using Domain.Models;
 namespace webApi.Controllers
 {
     [Route("api/[controller]")]

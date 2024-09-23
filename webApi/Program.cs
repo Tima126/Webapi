@@ -2,6 +2,11 @@ using Microsoft.EntityFrameworkCore;
 
 using Microsoft.OpenApi.Models;
 using DataAccess.Models;
+using DataAccess.Wrapper;
+using BusinessLogic.Interfaces;
+using BusinessLogic.Services;
+using DataAccess.interfaces;
+using DataAccess.Repository;
 
 namespace webApi
 {
@@ -10,6 +15,51 @@ namespace webApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+
+
+           
+            builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IAddressService, AddressService>();
+            builder.Services.AddScoped<IDicountServices, DiscountService>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
+            builder.Services.AddScoped<INotificationTypeService, NotificationTypeService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrderDetailsService, OrderDetailsService>();
+            builder.Services.AddScoped<IOrderStatusService, OrderStatusService>();
+            builder.Services.AddScoped<IPaymentService, PaymentService>();
+            builder.Services.AddScoped<IPaymentMethodService, PaymentMethodService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
+            builder.Services.AddScoped<ISupplierService, SupplierService>();
+            builder.Services.AddScoped<ISupplierProductService, SupplierProductService>();
+            builder.Services.AddScoped<IWishlistService, WishlistService>();
+
+
+
+            builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+            builder.Services.AddScoped<ICategoryRepository, CategoriaRepository>();
+            builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
+            builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+            builder.Services.AddScoped<INotificationTypeRepository, NotificationTypeRepository>();
+            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+            builder.Services.AddScoped<IOrderDetailRepository, OrderDetailsRepository>();
+            builder.Services.AddScoped<IOrderStatusRepository, OrderStatusRepository>();
+            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+            builder.Services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+            builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
+            builder.Services.AddScoped<ISupplierProductRepository, SupplierProductRepository>();
+            builder.Services.AddScoped<IWishlistRepository, WishlistRepository>();
+
+
+
+            builder.Services.AddDbContext<FlowersStoreContext>(
+                optionsAction:options => options.UseSqlServer(
+                    connectionString: "Server=TIMA;Database=Flowers_store;Trusted_Connection=True;TrustServerCertificate=True;"));
+
 
 
 
@@ -25,11 +75,10 @@ namespace webApi
 
 
 
+            
 
 
 
-            builder.Services.AddDbContext<FlowersStoreContext>(
-                options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllers();
