@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class OrderService
+    public class OrderService:IOrderService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -19,40 +20,42 @@ namespace BusinessLogic.Services
         }
 
 
-
-        public Task<List<Order>> GetAll()
+        public async Task<List<Order>> GetAll()
         {
-            return _repositoryWrapper.Order.FindAll().ToListAsync();
+            return await _repositoryWrapper.Order.FindAll();
         }
 
 
-        public Task<Order> GetById(int id)
+        public async Task<Order> GetById(int id)
         {
-            var order = _repositoryWrapper.Order.FinByCondition(x => x.OrderId == id).First();
-            return Task.FromResult(order);
+            var order = await _repositoryWrapper.Order
+                .FindByCondition(x => x.OrderId == id);
+
+            return order.First();
         }
 
-        public Task Create(Order model)
+        public async Task Create(Order model)
         {
-            _repositoryWrapper.Order.Create(model);
+            await _repositoryWrapper.Order.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(Order model)
+
+
+        public async Task Update(Order model)
         {
             _repositoryWrapper.Order.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
-        {
-            var order = _repositoryWrapper.Order.FinByCondition(x => x.OrderId == id).First();
 
-            _repositoryWrapper.Order.Delete(order);
+        public async Task Delete(int id)
+        {
+            var order = await _repositoryWrapper.Order
+                .FindByCondition(x => x.OrderId == id);
+
+            _repositoryWrapper.Order.Delete(order.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
     }
 }

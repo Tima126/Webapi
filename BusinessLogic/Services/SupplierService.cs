@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class SupplierService
+    public class SupplierService: ISupplierService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -19,41 +20,44 @@ namespace BusinessLogic.Services
         }
 
 
-
-        public Task<List<Supplier>> GetAll()
+        public async Task<List<Supplier>> GetAll()
         {
-            return _repositoryWrapper.Supplier.FindAll().ToListAsync();
+            return await _repositoryWrapper.Supplier.FindAll();
         }
 
 
-        public Task<Supplier> GetById(int id)
+        public async Task<Supplier> GetById(int id)
         {
-            var supplier = _repositoryWrapper.Supplier.FinByCondition(x => x.SupplierId == id).First();
-            return Task.FromResult(supplier);
+            var supplier = await _repositoryWrapper.Supplier
+                .FindByCondition(x => x.SupplierId == id);
+
+            return supplier.First();
         }
 
-        public Task Create(Supplier model)
+        public async Task Create(Supplier model)
         {
-            _repositoryWrapper.Supplier.Create(model);
+            await _repositoryWrapper.Supplier.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(Supplier model)
+
+
+        public async Task Update(Supplier model)
         {
             _repositoryWrapper.Supplier.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var supplier = _repositoryWrapper.Supplier.FinByCondition(x => x.SupplierId == id).First();
+            var supplier = await _repositoryWrapper.Supplier
+                .FindByCondition(x => x.SupplierId== id);
 
-            _repositoryWrapper.Supplier.Delete(supplier);
+            _repositoryWrapper.Supplier.Delete(supplier.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
 
     }
 }

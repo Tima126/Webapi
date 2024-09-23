@@ -7,10 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class OrderStatusService
+    public class OrderStatusService:IOrderStatusService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -19,41 +20,42 @@ namespace BusinessLogic.Services
             _repositoryWrapper = repositoryWrapper;
         }
 
-
-
-        public Task<List<OrderStatus>> GetAll()
+        public async Task<List<OrderStatus>> GetAll()
         {
-            return _repositoryWrapper.OrderStatus.FindAll().ToListAsync();
+            return await _repositoryWrapper.OrderStatus.FindAll();
         }
 
 
-        public Task<OrderStatus> GetById(int id)
+        public async Task<OrderStatus> GetById(int id)
         {
-            var status = _repositoryWrapper.OrderStatus.FinByCondition(x => x.StatusId == id).First();
-            return Task.FromResult(status);
+            var orderStatus = await _repositoryWrapper.OrderStatus
+                .FindByCondition(x => x.StatusId == id);
+
+            return orderStatus.First();
         }
 
-        public Task Create(OrderStatus model)
+        public async Task Create(OrderStatus model)
         {
-            _repositoryWrapper.OrderStatus.Create(model);
+            await _repositoryWrapper.OrderStatus.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(OrderStatus model)
+
+
+        public async Task Update(OrderStatus model)
         {
             _repositoryWrapper.OrderStatus.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
-        {
-            var status = _repositoryWrapper.OrderStatus.FinByCondition(x => x.StatusId == id).First();
 
-            _repositoryWrapper.OrderStatus.Delete(status);
+        public async Task Delete(int id)
+        {
+            var orderStatus = await _repositoryWrapper.OrderStatus
+                .FindByCondition(x => x.StatusId == id);
+
+            _repositoryWrapper.OrderStatus.Delete(orderStatus.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
     }

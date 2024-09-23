@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "XpoT+UHffFs=",
+  "dgSpecHash": "6ItisWm2aZE=",
   "success": true,
   "projectFilePath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
-=======
-  "dgSpecHash": "DyNSPN8myOpgqtamqExOutTreMBIOJDGNV4TbpnHYMYRUDky6aS9qL+3ApDRan9PBr7AtKmjzNzipzYjn2CRbw==",
-  "success": true,
-  "projectFilePath": "C:\\webApi\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timaf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",
@@ -89,6 +83,12 @@
     "C:\\Users\\timaf\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
->>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

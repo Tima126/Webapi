@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class ProductService
+    public class ProductService:IProductService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -17,42 +18,42 @@ namespace BusinessLogic.Services
         {
             _repositoryWrapper = repositoryWrapper;
         }
-
-
-
-        public Task<List<Product>> GetAll()
+        public async Task<List<Product>> GetAll()
         {
-            return _repositoryWrapper.Product.FindAll().ToListAsync();
+            return await _repositoryWrapper.Product.FindAll();
         }
 
 
-        public Task<Product> GetById(int id)
+        public async Task<Product> GetById(int id)
         {
-            var product = _repositoryWrapper.Product.FinByCondition(x => x.ProductId == id).First();
-            return Task.FromResult(product);
+            var product = await _repositoryWrapper.Product
+                .FindByCondition(x => x.ProductId == id);
+
+            return product.First();
         }
 
-        public Task Create(Product model)
+        public async Task Create(Product model)
         {
-            _repositoryWrapper.Product.Create(model);
+            await _repositoryWrapper.Product.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(Product model)
+
+
+        public async Task Update(Product model)
         {
             _repositoryWrapper.Product.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
-        {
-            var product = _repositoryWrapper.Product.FinByCondition(x => x.ProductId == id).First();
 
-            _repositoryWrapper.Product.Delete(product);
+        public async Task Delete(int id)
+        {
+            var product = await _repositoryWrapper.Product
+                .FindByCondition(x => x.ProductId == id);
+
+            _repositoryWrapper.Product.Delete(product.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
     }

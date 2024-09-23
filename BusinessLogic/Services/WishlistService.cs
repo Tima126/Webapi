@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class WishlistService
+    public class WishlistService:IWishlistService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -19,40 +20,43 @@ namespace BusinessLogic.Services
         }
 
 
-
-        public Task<List<Wishlist>> GetAll()
+        public async Task<List<Wishlist>> GetAll()
         {
-            return _repositoryWrapper.Wishlist.FindAll().ToListAsync();
+            return await _repositoryWrapper.Wishlist.FindAll();
         }
 
 
-        public Task<Wishlist> GetById(int id)
+        public async Task<Wishlist> GetById(int id)
         {
-            var wishlist = _repositoryWrapper.Wishlist.FinByCondition(x => x.WishlistId == id).First();
-            return Task.FromResult(wishlist);
+            var wishlist = await _repositoryWrapper.Wishlist
+                .FindByCondition(x => x.WishlistId == id);
+
+            return wishlist.First();
         }
 
-        public Task Create(Wishlist model)
+        public async Task Create(Wishlist model)
         {
-            _repositoryWrapper.Wishlist.Create(model);
+            await _repositoryWrapper.Wishlist.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(Wishlist model)
+
+
+        public async Task Update(Wishlist model)
         {
             _repositoryWrapper.Wishlist.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var wishlist = _repositoryWrapper.Wishlist.FinByCondition(x => x.WishlistId == id).First();
+            var wishlist = await _repositoryWrapper.Wishlist
+                .FindByCondition(x => x.WishlistId == id);
 
-            _repositoryWrapper.Wishlist.Delete(wishlist);
+            _repositoryWrapper.Wishlist.Delete(wishlist.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
     }
 }

@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-
 using Microsoft.OpenApi.Models;
-using DataAccess.Models;
 using DataAccess.Wrapper;
-using BusinessLogic.Interfaces;
+using Domain.Interfaces;
 using BusinessLogic.Services;
-using DataAccess.interfaces;
+using Domain.interfaces;
 using DataAccess.Repository;
+using Domain.Repository;
+using Domain.Models;
 
 namespace webApi
 {
@@ -38,21 +38,6 @@ namespace webApi
 
 
 
-            builder.Services.AddScoped<IAddressRepository, AddressRepository>();
-            builder.Services.AddScoped<ICategoryRepository, CategoriaRepository>();
-            builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
-            builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
-            builder.Services.AddScoped<INotificationTypeRepository, NotificationTypeRepository>();
-            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-            builder.Services.AddScoped<IOrderDetailRepository, OrderDetailsRepository>();
-            builder.Services.AddScoped<IOrderStatusRepository, OrderStatusRepository>();
-            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
-            builder.Services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
-            builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
-            builder.Services.AddScoped<ISupplierProductRepository, SupplierProductRepository>();
-            builder.Services.AddScoped<IWishlistRepository, WishlistRepository>();
 
 
 

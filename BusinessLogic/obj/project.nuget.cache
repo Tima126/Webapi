@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "XS/uMeBEB3M=",
+  "dgSpecHash": "/dgZ1C7gBaQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\BusinessLogic.csproj",
-=======
-  "dgSpecHash": "56GtwUVsEbCygXL6zPYxX5qdAdOD1LAYEU2mtIwpdJuLdmQXMEDoZ7oPH4DCbJgpikauuHpB+SW/ltfedY+eAQ==",
-  "success": true,
-  "projectFilePath": "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
->>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
   "expectedPackageFiles": [
     "C:\\Users\\timaf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",
@@ -58,5 +52,12 @@
     "C:\\Users\\timaf\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

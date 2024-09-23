@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class PaymentMethodService
+    public class PaymentMethodService: IPaymentMethodService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -18,41 +19,42 @@ namespace BusinessLogic.Services
             _repositoryWrapper = repositoryWrapper;
         }
 
-
-
-        public Task<List<PaymentMethod>> GetAll()
+        public async Task<List<PaymentMethod>> GetAll()
         {
-            return _repositoryWrapper.PaymentMethod.FindAll().ToListAsync();
+            return await _repositoryWrapper.PaymentMethod.FindAll();
         }
 
 
-        public Task<PaymentMethod> GetById(int id)
+        public async Task<PaymentMethod> GetById(int id)
         {
-            var paymentMethod = _repositoryWrapper.PaymentMethod.FinByCondition(x => x.PaymentMethodId == id).First();
-            return Task.FromResult(paymentMethod);
+            var paymentMethod = await _repositoryWrapper.PaymentMethod
+                .FindByCondition(x => x.PaymentMethodId == id);
+
+            return paymentMethod.First();
         }
 
-        public Task Create(PaymentMethod model)
+        public async Task Create(PaymentMethod model)
         {
-            _repositoryWrapper.PaymentMethod.Create(model);
+            await _repositoryWrapper.PaymentMethod.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(PaymentMethod model)
+
+
+        public async Task Update(PaymentMethod model)
         {
             _repositoryWrapper.PaymentMethod.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
-        {
-            var paymentMethod = _repositoryWrapper.PaymentMethod.FinByCondition(x => x.PaymentMethodId == id).First();
 
-            _repositoryWrapper.PaymentMethod.Delete(paymentMethod);
+        public async Task Delete(int id)
+        {
+            var PaymentMethod = await _repositoryWrapper.PaymentMethod
+                .FindByCondition(x => x.PaymentMethodId == id);
+
+            _repositoryWrapper.PaymentMethod.Delete(PaymentMethod.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
     }

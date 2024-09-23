@@ -1,4 +1,5 @@
-﻿using Domain.interfaces;
+﻿using DataAccess.Repository;
+using Domain.interfaces;
 using Domain.Models;
 
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repository
+namespace Domain.Repository
 {
     public class AddressRepository : RepositoryBase<Address>, IAddressRepository
     {

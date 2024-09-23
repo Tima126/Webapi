@@ -1,11 +1,16 @@
 ﻿using Domain.Models;
-using Domain.interfaces;
-;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Domain.interfaces;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class OrderDetailsService
+    public class OrderDetailsService:IOrderDetailsService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -16,39 +21,43 @@ namespace BusinessLogic.Services
 
 
 
-        public Task<List<OrderDetail>> GetAll()
+        public async Task<List<OrderDetail>> GetAll()
         {
-            return _repositoryWrapper.OrderDetail.FindAll().ToListAsync();
+            return await _repositoryWrapper.OrderDetail.FindAll();
         }
 
 
-        public Task<OrderDetail> GetById(int id)
+        public async Task<OrderDetail> GetById(int id)
         {
-            var orderDetail = _repositoryWrapper.OrderDetail.FinByCondition(x => x.OrderDetailId == id).First();
-            return Task.FromResult(orderDetail);
+            var user = await _repositoryWrapper.OrderDetail
+                .FindByCondition(x => x.OrderDetailId == id);
+
+            return user.First();
         }
 
-        public Task Create(OrderDetail model)
+        public async Task Create(OrderDetail model)
         {
-            _repositoryWrapper.OrderDetail.Create(model);
+            await _repositoryWrapper.OrderDetail.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(OrderDetail model)
+
+
+        public async Task Update(OrderDetail model)
         {
             _repositoryWrapper.OrderDetail.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var orderDetail = _repositoryWrapper.OrderDetail.FinByCondition(x => x.OrderDetailId == id).First();
+            var orderDetail = await _repositoryWrapper.OrderDetail
+                .FindByCondition(x => x.OrderDetailId == id);
 
-            _repositoryWrapper.OrderDetail.Delete(orderDetail);
+            _repositoryWrapper.OrderDetail.Delete(orderDetail.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
     }
 }

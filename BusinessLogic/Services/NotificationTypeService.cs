@@ -1,15 +1,10 @@
 ﻿using Domain.Models;
 using Domain.interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class NotificationTypeService
+    public class NotificationTypeService: INotificationTypeService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -20,39 +15,44 @@ namespace BusinessLogic.Services
 
 
 
-        public Task<List<NotificationType>> GetAll()
+
+        public async Task<List<NotificationType>> GetAll()
         {
-            return _repositoryWrapper.Notificationtype.FindAll().ToListAsync();
+            return await _repositoryWrapper.Notificationtype.FindAll();
         }
 
 
-        public Task<NotificationType> GetById(int id)
+        public async Task<NotificationType> GetById(int id)
         {
-            var notificationtype = _repositoryWrapper.Notificationtype.FinByCondition(x => x.NotificationTypeId == id).First();
-            return Task.FromResult(notificationtype);
+            var notificationtype = await _repositoryWrapper.Notificationtype
+                .FindByCondition(x => x.NotificationTypeId == id);
+
+            return notificationtype.First();
         }
 
-        public Task Create(NotificationType model)
+        public async Task Create(NotificationType model)
         {
-            _repositoryWrapper.Notificationtype.Create(model);
+            await _repositoryWrapper.Notificationtype.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(NotificationType model)
+
+
+        public async Task Update(NotificationType model)
         {
             _repositoryWrapper.Notificationtype.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var notificationType = _repositoryWrapper.Notificationtype.FinByCondition(x => x.NotificationTypeId == id).First();
+            var user = await _repositoryWrapper.Notificationtype
+                .FindByCondition(x => x.NotificationTypeId == id);
 
-            _repositoryWrapper.Notificationtype.Delete(notificationType);
+            _repositoryWrapper.Notificationtype.Delete(user.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
     }
 }

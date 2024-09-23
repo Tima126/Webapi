@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class SupplierProductService
+    public class SupplierProductService:ISupplierProductService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -19,40 +20,44 @@ namespace BusinessLogic.Services
         }
 
 
-
-        public Task<List<SupplierProduct>> GetAll()
+        public async Task<List<SupplierProduct>> GetAll()
         {
-            return _repositoryWrapper.SupplierProduct.FindAll().ToListAsync();
+            return await _repositoryWrapper.SupplierProduct.FindAll();
         }
 
 
-        public Task<SupplierProduct> GetById(int id)
+        public async Task<SupplierProduct> GetById(int id)
         {
-            var supplierproduct = _repositoryWrapper.SupplierProduct.FinByCondition(x => x.SupplierProductId == id).First();
-            return Task.FromResult(supplierproduct);
+            var supplierProduct = await _repositoryWrapper.SupplierProduct
+                .FindByCondition(x => x.SupplierProductId == id);
+
+            return supplierProduct.First();
         }
 
-        public Task Create(SupplierProduct model)
+        public async Task Create(SupplierProduct model)
         {
-            _repositoryWrapper.SupplierProduct.Create(model);
+            await _repositoryWrapper.SupplierProduct.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(SupplierProduct model)
+
+
+        public async Task Update(SupplierProduct model)
         {
             _repositoryWrapper.SupplierProduct.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var supplierproduct = _repositoryWrapper.SupplierProduct.FinByCondition(x => x.SupplierProductId == id).First();
+            var supplierProduct = await _repositoryWrapper.SupplierProduct
+                .FindByCondition(x => x.SupplierProductId == id);
 
-            _repositoryWrapper.SupplierProduct.Delete(supplierproduct);
+            _repositoryWrapper.SupplierProduct.Delete(supplierProduct.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
+
     }
 }

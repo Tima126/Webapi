@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "zImXZeIs+BM=",
+  "dgSpecHash": "ATtKhWbmotA=",
   "success": true,
   "projectFilePath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj",
-=======
-  "dgSpecHash": "gCKPJ49OyZHwL3MkEGRFFS6mDwFyQp4FymgEwcjn5FA4PF+bxSwDFcWHNfZmQzKS0LyMo0EsWCqgWso2iTK6Vw==",
-  "success": true,
-  "projectFilePath": "C:\\webApi\\DataAccess\\DataAccess.csproj",
->>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
   "expectedPackageFiles": [
     "C:\\Users\\timaf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",

@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class CategoryService
+    public class CategoryService:ICategoryService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -19,40 +20,43 @@ namespace BusinessLogic.Services
         }
 
 
-
-        public Task<List<Category>> GetAll()
+        public async Task<List<Category>> GetAll()
         {
-            return _repositoryWrapper.Category.FindAll().ToListAsync();
+            return await _repositoryWrapper.Category.FindAll();
         }
 
 
-        public Task<Category> GetById(int id)
+        public async Task<Category> GetById(int id)
         {
-            var category = _repositoryWrapper.Category.FinByCondition(x => x.CategoryId == id).First();
-            return Task.FromResult(category);
+            var category = await _repositoryWrapper.Category
+                .FindByCondition(x => x.CategoryId == id);
+
+            return category.First();
         }
 
-        public Task Create(Category model)
+        public async Task Create(Category model)
         {
-            _repositoryWrapper.Category.Create(model);
+            await _repositoryWrapper.Category.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(Category model)
+
+
+        public async Task Update(Category model)
         {
             _repositoryWrapper.Category.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var category = _repositoryWrapper.Category.FinByCondition(x => x.CategoryId == id).First();
+            var category = await _repositoryWrapper.Category
+                .FindByCondition(x => x.CategoryId == id);
 
-            _repositoryWrapper.Category.Delete(category);
+            _repositoryWrapper.Category.Delete(category.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
     }
 }

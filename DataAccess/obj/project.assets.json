@@ -4743,19 +4743,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
       "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\DataAccess\\obj\\",
-=======
-      "projectUniqueName": "C:\\webApi\\DataAccess\\DataAccess.csproj",
-      "projectName": "DataAccess",
-      "projectPath": "C:\\webApi\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-      "outputPath": "C:\\webApi\\DataAccess\\obj\\",
->>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4773,8 +4765,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\webApi\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\webApi\\Domain\\Domain.csproj"
+            "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj"
             }
           }
         }

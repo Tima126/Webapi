@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class NotificationService
+    public class NotificationService:INotificationService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -20,39 +21,43 @@ namespace BusinessLogic.Services
 
 
 
-        public Task<List<Address>> GetAll()
+        public async Task<List<Notification>> GetAll()
         {
-            return _repositoryWrapper.Address.FindAll().ToListAsync();
+            return await _repositoryWrapper.Notification.FindAll();
         }
 
 
-        public Task<Address> GetById(int id)
+        public async Task<Notification> GetById(int id)
         {
-            var address = _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id).First();
-            return Task.FromResult(address);
+            var notification = await _repositoryWrapper.Notification
+                .FindByCondition(x => x.NotificationId == id);
+
+            return notification.First();
         }
 
-        public Task Create(Address model)
+        public async Task Create(Notification model)
         {
-            _repositoryWrapper.Address.Create(model);
+            await _repositoryWrapper.Notification.Create(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Update(Address model)
+
+
+        public async Task Update(Notification model)
         {
-            _repositoryWrapper.Address.Update(model);
+            _repositoryWrapper.Notification.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
-        public Task Delete(int id)
+
+        public async Task Delete(int id)
         {
-            var address = _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id).First();
+            var notification = await _repositoryWrapper.Notification
+                .FindByCondition(x => x.NotificationId == id);
 
-            _repositoryWrapper.Address.Delete(address);
+            _repositoryWrapper.Notification.Delete(notification.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
+
     }
 }

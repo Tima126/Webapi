@@ -8,10 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BusinessLogic
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\timaf\Documents\GitHub\Webapi\BusinessLogic\
-=======
-build_property.ProjectDir = C:\webApi\BusinessLogic\
->>>>>>> 51972aeedb3359df2b44cbc5b9f3ff2c0be044ff
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -30,7 +30,7 @@ namespace BusinessLogic.Services
 
         public async Task<Address> GetById(int id)
         {
-            var address = await _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id);
+            var address = await _repositoryWrapper.Address.FindByCondition(x => x.AddressId == id);
             return address.First();
         }
 
@@ -50,7 +50,7 @@ namespace BusinessLogic.Services
 
         public async Task Delete(int id)
         {
-            var address = await _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id);
+            var address = await _repositoryWrapper.Address.FindByCondition(x => x.AddressId == id);
 
             _repositoryWrapper.Address.Delete(address.First());
             _repositoryWrapper.Save();
