@@ -1,5 +1,5 @@
-﻿using DataAccess.interfaces;
-using DataAccess.Models;
+﻿using Domain.interfaces;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,14 +20,13 @@ namespace DataAccess.Repository
             RepositoryContext = repositoryContex;
         }
 
-        public IQueryable<T> FindAll() => RepositoryContext.Set<T>().AsNoTracking();
+        public async Task<List <T>> FindAll() =>await RepositoryContext.Set<T>().AsNoTracking().ToListAsync();
 
-        public IQueryable<T> FinByCondition(Expression<Func<T, bool>> expression) => RepositoryContext.Set<T>().Where(expression).AsNoTracking();
-        public void Create(T entity) => RepositoryContext.Set<T>().Add(entity);
-        public void Update(T entity) => RepositoryContext.Set<T>().Update(entity);
+        public async Task<List<T>> FinByCondition(Expression<Func<T, bool>> expression) =>await RepositoryContext.Set<T>().Where(expression).AsNoTracking().ToListAsync();
+        public async Task Create(T entity) => await RepositoryContext.Set<T>().AddAsync(entity);
+        public async Task Update(T entity) =>  RepositoryContext.Set<T>().Update(entity);
 
-
-        public void Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);
+        public async Task Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);
 
 
 

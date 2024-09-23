@@ -1,5 +1,5 @@
-﻿using DataAccess.interfaces;
-using DataAccess.Models;
+﻿using Domain.interfaces;
+using Domain.Models;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
@@ -232,9 +232,9 @@ namespace DataAccess.Wrapper
 
 
 
-        public void Save()
+        public async Task Save()
         {
-            _repoContext.SaveChanges();
+           await _repoContext.SaveChangesAsync();
         }
 
     }

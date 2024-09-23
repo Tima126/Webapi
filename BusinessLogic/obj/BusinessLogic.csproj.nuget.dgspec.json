@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\webApi\\BusinessLogic\\BusinessLogic.csproj": {}
+    "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj": {}
   },
   "projects": {
-    "D:\\webApi\\BusinessLogic\\BusinessLogic.csproj": {
+    "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "D:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
+        "projectPath": "C:\\webApi\\BusinessLogic\\BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-        "outputPath": "D:\\webApi\\BusinessLogic\\obj\\",
+        "outputPath": "C:\\webApi\\BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\webApi\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\webApi\\DataAccess\\DataAccess.csproj"
+              "C:\\webApi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\webApi\\Domain\\Domain.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "D:\\webApi\\DataAccess\\DataAccess.csproj": {
+    "C:\\webApi\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\webApi\\DataAccess\\DataAccess.csproj",
-        "projectName": "DataAccess",
-        "projectPath": "D:\\webApi\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\webApi\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\webApi\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-        "outputPath": "D:\\webApi\\DataAccess\\obj\\",
+        "outputPath": "C:\\webApi\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",

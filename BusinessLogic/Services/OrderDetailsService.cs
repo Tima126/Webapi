@@ -1,5 +1,6 @@
-﻿using DataAccess.Models;
-using DataAccess.Wrapper;
+﻿using Domain.Models;
+using Domain.interfaces;
+;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Services

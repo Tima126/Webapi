@@ -1,5 +1,5 @@
-﻿using DataAccess.Models;
-using DataAccess.Wrapper;
+﻿using Domain.Models;
+using Domain.interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,10 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces;
 
 namespace BusinessLogic.Services
 {
-    public class AddressService
+    public class AddressService:IAddressService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -21,39 +22,38 @@ namespace BusinessLogic.Services
 
 
 
-        public Task<List<Address>> GetAll()
+        public async Task<List<Address>> GetAll()
         {
-            return _repositoryWrapper.Address.FindAll().ToListAsync();
+            return await _repositoryWrapper.Address.FindAll();
         }
 
 
-        public Task<Address> GetById(int id)
+        public async Task<Address> GetById(int id)
         {
-            var address = _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id).First();
-            return Task.FromResult(address);
+            var address = await _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id);
+            return address.First();
         }
 
-        public Task Create(Address model)
+        public async Task Create(Address model)
         {
-            _repositoryWrapper.Address.Create(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            await _repositoryWrapper.Address.Create(model);
+            
+           _repositoryWrapper.Save();
         }
 
-        public Task Update(Address model)
+        public async Task Update(Address model)
         {
             _repositoryWrapper.Address.Update(model);
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
+           
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            var address = _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id).First();
+            var address = await _repositoryWrapper.Address.FinByCondition(x => x.AddressId == id);
 
-            _repositoryWrapper.Address.Delete(address);
+            _repositoryWrapper.Address.Delete(address.First());
             _repositoryWrapper.Save();
-            return Task.CompletedTask;
         }
 
 
