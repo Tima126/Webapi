@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.Design;
-using Domain.Interfaces;
+using Domain.interfaces.Service;
 
 namespace BusinessLogic.Services
 {

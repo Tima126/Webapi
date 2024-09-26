@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using DataAccess.Wrapper;
-using Domain.Interfaces;
 using BusinessLogic.Services;
 using Domain.interfaces;
 using DataAccess.Repository;
 using Domain.Repository;
 using Domain.Models;
+using Domain.interfaces.Service;
 
 namespace webApi
 {

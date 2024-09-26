@@ -1,4 +1,6 @@
-﻿namespace Domain.interfaces
+﻿using Domain.interfaces.Repository;
+
+namespace Domain.interfaces
 {
     public interface IRepositoryWrapper
     {

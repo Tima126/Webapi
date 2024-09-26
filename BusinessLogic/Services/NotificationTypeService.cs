@@ -1,6 +1,6 @@
 ﻿using Domain.Models;
 using Domain.interfaces;
-using Domain.Interfaces;
+using Domain.interfaces.Service;
 
 namespace BusinessLogic.Services
 {

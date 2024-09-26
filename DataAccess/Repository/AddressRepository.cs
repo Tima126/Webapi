@@ -1,5 +1,5 @@
 ﻿using DataAccess.Repository;
-using Domain.interfaces;
+using Domain.interfaces.Repository;
 using Domain.Models;
 
 using System;

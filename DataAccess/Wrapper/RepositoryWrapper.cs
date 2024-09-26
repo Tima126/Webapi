@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Repository;
+using Domain.interfaces.Repository;
 
 namespace DataAccess.Wrapper
 {

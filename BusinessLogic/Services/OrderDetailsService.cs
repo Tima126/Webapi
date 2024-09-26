@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.interfaces;
-using Domain.Interfaces;
+using Domain.interfaces.Service;
 
 namespace BusinessLogic.Services
 {
