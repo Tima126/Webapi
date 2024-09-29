@@ -14,7 +14,29 @@ namespace webApi.Controllers
             Context = context;
         }
 
-  
+
+
+        /// <summary>
+        /// Создание нового пользователя
+        /// </summary>
+        /// <remarks>
+        /// Пример вывода:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "addressId": 1,
+        ///        "address1": "ул. Ленина, 123",
+        ///        "city": "Москва",
+        ///        "postalCode": "123456",
+        ///        "country": "Россия",
+        ///        "users": []
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="model">Пользователь</param>
+        /// <returns></returns>
+
+
         [HttpGet]
         public IActionResult GetAll()
         {

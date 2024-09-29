@@ -359,7 +359,6 @@ C:\webApi\webApi\obj\Debug\net8.0\webApi.GeneratedMSBuildEditorConfig.editorconf
 C:\webApi\webApi\obj\Debug\net8.0\webApi.AssemblyInfoInputs.cache
 C:\webApi\webApi\obj\Debug\net8.0\webApi.AssemblyInfo.cs
 C:\webApi\webApi\obj\Debug\net8.0\webApi.csproj.CoreCompileInputs.cache
-C:\webApi\webApi\obj\Debug\net8.0\webApi.MvcApplicationPartsAssemblyInfo.cs
 C:\webApi\webApi\obj\Debug\net8.0\webApi.MvcApplicationPartsAssemblyInfo.cache
 C:\webApi\webApi\obj\Debug\net8.0\webApi.sourcelink.json
 C:\webApi\webApi\obj\Debug\net8.0\staticwebassets.build.json
@@ -553,3 +552,6 @@ C:\Users\timaf\Documents\GitHub\Webapi\webApi\obj\Debug\net8.0\webApi.genruntime
 C:\Users\timaf\Documents\GitHub\Webapi\webApi\obj\Debug\net8.0\ref\webApi.dll
 C:\webApi\webApi\bin\Debug\net8.0\Domain.dll
 C:\webApi\webApi\bin\Debug\net8.0\Domain.pdb
+C:\webApi\webApi\bin\Debug\net8.0\webApi.xml
+C:\webApi\webApi\obj\Debug\net8.0\webApi.MvcApplicationPartsAssemblyInfo.cs
+C:\webApi\webApi\obj\Debug\net8.0\webApi.xml

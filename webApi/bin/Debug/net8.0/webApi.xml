@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webApi</name>
+    </assembly>
+    <members>
+        <member name="M:webApi.Controllers.AddressesController.GetAll">
+             <summary>
+             Создание нового пользователя
+             </summary>
+             <remarks>
+             Пример вывода:
+            
+                 POST /Todo
+                 {
+                    "addressId": 1,
+                    "address1": "ул. Ленина, 123",
+                    "city": "Москва",
+                    "postalCode": "123456",
+                    "country": "Россия",
+                    "users": []
+                 }
+            
+             </remarks>
+             <param name="model">Пользователь</param>
+             <returns></returns>
+        </member>
+    </members>
+</doc>

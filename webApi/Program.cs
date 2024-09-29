@@ -7,6 +7,8 @@ using DataAccess.Repository;
 using Domain.Repository;
 using Domain.Models;
 using Domain.interfaces.Service;
+using System.Reflection;
+using Microsoft.Extensions.Options;
 
 namespace webApi
 {
@@ -17,8 +19,27 @@ namespace webApi
             var builder = WebApplication.CreateBuilder(args);
 
 
+            builder.Services.AddSwaggerGen(optoins =>
+            {
+                optoins.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "API Интернет-магазин цветов",
+                    Description ="Api придназначен для взаимодействием базы данных",
 
-           
+
+                });
+
+                var xmlFilname = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                optoins.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilname));
+            });
+
+
+
+
+            
+
+
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
@@ -70,10 +91,7 @@ namespace webApi
 
             // Настройка Swagger/OpenAPI
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
-            });
+
 
             var app = builder.Build();
 
