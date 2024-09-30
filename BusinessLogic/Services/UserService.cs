@@ -10,7 +10,7 @@ using Domain.interfaces.Service;
 
 namespace BusinessLogic.Services
 {
-    public class UserService:IUserService
+    public class UserService : IUserService
     {
         private IRepositoryWrapper _repositoryWrapper;
 
@@ -27,16 +27,51 @@ namespace BusinessLogic.Services
         }
 
 
-        public async Task<User>GetById(int id)
+        public async Task<User> GetById(int id)
         {
             var user = await _repositoryWrapper.User
                 .FindByCondition(x => x.UserId == id);
+
+            if (!user.Any())
+            {
+                throw new InvalidOperationException($"User with id {id} not found.");
+            }
 
             return user.First();
         }
 
         public async Task Create(User model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            if (string.IsNullOrEmpty(model.FirstName))
+            {
+                throw new ArgumentException(nameof(model.FirstName));
+            }
+
+            if (string.IsNullOrEmpty(model.LastName))
+            {
+                throw new ArgumentException(nameof(model.LastName));
+            }
+
+            if (string.IsNullOrEmpty(model.Email))
+            {
+                throw new ArgumentException(nameof(model.Email));
+            }
+
+            if (string.IsNullOrEmpty(model.PhoneNumber))
+            {
+                throw new ArgumentException(nameof(model.PhoneNumber));
+            }
+
+            if (model.AddressId <= 0)
+            {
+                throw new ArgumentException(nameof(model.AddressId));
+            }
+
             await _repositoryWrapper.User.Create(model);
             await _repositoryWrapper.Save();
         }
@@ -45,6 +80,10 @@ namespace BusinessLogic.Services
 
         public async Task Update(User model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
             await _repositoryWrapper.User.Update(model);
             await _repositoryWrapper.Save();
         }
@@ -54,6 +93,11 @@ namespace BusinessLogic.Services
         {
             var user = await _repositoryWrapper.User
                 .FindByCondition(x => x.UserId == id);
+
+            if (!user.Any())
+            {
+                throw new InvalidOperationException($"User with id {id} not found");
+            }
 
             await _repositoryWrapper.User.Delete(user.First());
             await _repositoryWrapper.Save();

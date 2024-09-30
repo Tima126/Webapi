@@ -18,8 +18,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "address",
-        "Type": "Domain.Models.Address",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateAddress",
         "IsRequired": true
       }
     ],
@@ -34,8 +34,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "address",
-        "Type": "Domain.Models.Address",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateAddress",
         "IsRequired": true
       }
     ],
@@ -60,7 +60,7 @@
   {
     "ContainingType": "webApi.Controllers.AddressesController",
     "Method": "Delete",
-    "RelativePath": "api/Addresses/id",
+    "RelativePath": "api/Addresses/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -68,7 +68,7 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -85,15 +85,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.CategoriController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Categori",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cate",
-        "Type": "Domain.Models.Category",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateCategori",
         "IsRequired": true
       }
     ],
@@ -108,8 +108,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cate",
-        "Type": "Domain.Models.Category",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateCategori",
         "IsRequired": true
       }
     ],
@@ -117,23 +117,7 @@
   },
   {
     "ContainingType": "webApi.Controllers.CategoriController",
-    "Method": "Delete",
-    "RelativePath": "api/Categori",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.CategoriController",
-    "Method": "GetByid",
+    "Method": "GetById",
     "RelativePath": "api/Categori/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -148,6 +132,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.CategoriController",
+    "Method": "Delete",
+    "RelativePath": "api/Categori/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.DiscountController",
     "Method": "GetAll",
     "RelativePath": "api/Discount",
@@ -159,15 +159,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.DiscountController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Discount",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "disc",
-        "Type": "Domain.Models.Discount",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateDiscount",
         "IsRequired": true
       }
     ],
@@ -183,24 +183,8 @@
     "Parameters": [
       {
         "Name": "disc",
-        "Type": "Domain.Models.Discount",
+        "Type": "webApi.Contracts.CreateDiscount",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.DiscountController",
-    "Method": "Delete",
-    "RelativePath": "api/Discount",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -222,6 +206,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.DiscountController",
+    "Method": "Delete",
+    "RelativePath": "api/Discount/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.NotificationController",
     "Method": "GetAll",
     "RelativePath": "api/Notification",
@@ -233,15 +233,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.NotificationController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Notification",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "notification",
-        "Type": "Domain.Models.Notification",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateNotification",
         "IsRequired": true
       }
     ],
@@ -256,8 +256,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "notification",
-        "Type": "Domain.Models.Notification",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateNotification",
         "IsRequired": true
       }
     ],
@@ -265,23 +265,7 @@
   },
   {
     "ContainingType": "webApi.Controllers.NotificationController",
-    "Method": "Delete",
-    "RelativePath": "api/Notification",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.NotificationController",
-    "Method": "GetByid",
+    "Method": "GetById",
     "RelativePath": "api/Notification/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -296,6 +280,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.NotificationController",
+    "Method": "Delete",
+    "RelativePath": "api/Notification/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.NotificationTypeController",
     "Method": "GetAll",
     "RelativePath": "api/NotificationType",
@@ -307,15 +307,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.NotificationTypeController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/NotificationType",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "notification",
-        "Type": "Domain.Models.NotificationType",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateNotificationType",
         "IsRequired": true
       }
     ],
@@ -330,25 +330,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "notification",
-        "Type": "Domain.Models.NotificationType",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreateNotificationType",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.NotificationTypeController",
-    "Method": "Delete",
-    "RelativePath": "api/NotificationType",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -370,6 +354,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.NotificationTypeController",
+    "Method": "Delete",
+    "RelativePath": "api/NotificationType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.OrderController",
     "Method": "GetAll",
     "RelativePath": "api/Order",
@@ -381,15 +381,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.OrderController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Order",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "order",
-        "Type": "Domain.Models.Order",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateOrder",
         "IsRequired": true
       }
     ],
@@ -404,25 +404,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "order",
-        "Type": "Domain.Models.Order",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreateOrder",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.OrderController",
-    "Method": "Delete",
-    "RelativePath": "api/Order",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -444,6 +428,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.OrderController",
+    "Method": "Delete",
+    "RelativePath": "api/Order/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.OrderDetailsController",
     "Method": "GetAll",
     "RelativePath": "api/OrderDetails",
@@ -455,15 +455,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.OrderDetailsController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/OrderDetails",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderDetail",
-        "Type": "Domain.Models.OrderDetail",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateOrderDitail",
         "IsRequired": true
       }
     ],
@@ -478,25 +478,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderDetail",
-        "Type": "Domain.Models.OrderDetail",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreateOrderDitail",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.OrderDetailsController",
-    "Method": "Delete",
-    "RelativePath": "api/OrderDetails",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -518,6 +502,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.OrderDetailsController",
+    "Method": "Delete",
+    "RelativePath": "api/OrderDetails/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.OrderStatusController",
     "Method": "GetAll",
     "RelativePath": "api/OrderStatus",
@@ -529,15 +529,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.OrderStatusController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/OrderStatus",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderStatuses",
-        "Type": "Domain.Models.OrderStatus",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateOrderStatus",
         "IsRequired": true
       }
     ],
@@ -552,25 +552,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderStatuses",
-        "Type": "Domain.Models.OrderStatus",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreateOrderStatus",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.OrderStatusController",
-    "Method": "Delete",
-    "RelativePath": "api/OrderStatus",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -592,6 +576,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.OrderStatusController",
+    "Method": "Delete",
+    "RelativePath": "api/OrderStatus/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.PaymentController",
     "Method": "GetAll",
     "RelativePath": "api/Payment",
@@ -603,15 +603,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.PaymentController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Payment",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "payment",
-        "Type": "Domain.Models.Payment",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreatePayment",
         "IsRequired": true
       }
     ],
@@ -626,25 +626,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "payment",
-        "Type": "Domain.Models.Payment",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreatePayment",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.PaymentController",
-    "Method": "Delete",
-    "RelativePath": "api/Payment",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -666,6 +650,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.PaymentController",
+    "Method": "Delete",
+    "RelativePath": "api/Payment/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.PaymentMetodsController",
     "Method": "GetAll",
     "RelativePath": "api/PaymentMetods",
@@ -677,15 +677,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.PaymentMetodsController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/PaymentMetods",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "upaymentMethodsser",
-        "Type": "Domain.Models.PaymentMethod",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreatePaymentMethod",
         "IsRequired": true
       }
     ],
@@ -700,25 +700,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "upaymentMethodsser",
-        "Type": "Domain.Models.PaymentMethod",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreatePaymentMethod",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.PaymentMetodsController",
-    "Method": "Delete",
-    "RelativePath": "api/PaymentMetods",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -740,6 +724,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.PaymentMetodsController",
+    "Method": "Delete",
+    "RelativePath": "api/PaymentMetods/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.ProductsController",
     "Method": "GetAll",
     "RelativePath": "api/Products",
@@ -751,15 +751,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.ProductsController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Products",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "Domain.Models.Product",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateProducts",
         "IsRequired": true
       }
     ],
@@ -774,8 +774,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "Domain.Models.Product",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateProducts",
         "IsRequired": true
       }
     ],
@@ -783,23 +783,7 @@
   },
   {
     "ContainingType": "webApi.Controllers.ProductsController",
-    "Method": "Delete",
-    "RelativePath": "api/Products",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.ProductsController",
-    "Method": "GetByid",
+    "Method": "GetById",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -814,6 +798,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.ProductsController",
+    "Method": "Delete",
+    "RelativePath": "api/Products/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.ReviweController",
     "Method": "GetAll",
     "RelativePath": "api/Reviwe",
@@ -825,15 +825,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.ReviweController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Reviwe",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "reviwes",
-        "Type": "Domain.Models.Review",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateReviwe",
         "IsRequired": true
       }
     ],
@@ -848,25 +848,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "reviwes",
-        "Type": "Domain.Models.Review",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreateReviwe",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.ReviweController",
-    "Method": "Delete",
-    "RelativePath": "api/Reviwe",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -888,6 +872,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.ReviweController",
+    "Method": "Delete",
+    "RelativePath": "api/Reviwe/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.SupplierController",
     "Method": "GetAll",
     "RelativePath": "api/Supplier",
@@ -899,15 +899,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.SupplierController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Supplier",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "sup",
-        "Type": "Domain.Models.Supplier",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateSupplier",
         "IsRequired": true
       }
     ],
@@ -922,25 +922,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "sup",
-        "Type": "Domain.Models.Supplier",
+        "Name": "disc",
+        "Type": "webApi.Contracts.CreateSupplier",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.SupplierController",
-    "Method": "Delete",
-    "RelativePath": "api/Supplier",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -962,6 +946,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.SupplierController",
+    "Method": "Delete",
+    "RelativePath": "api/Supplier/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.UserController",
     "Method": "GetAll",
     "RelativePath": "api/User",
@@ -973,15 +973,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.UserController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Domain.Models.User",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateUser",
         "IsRequired": true
       }
     ],
@@ -996,8 +996,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Domain.Models.User",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateProducts",
         "IsRequired": true
       }
     ],
@@ -1005,23 +1005,7 @@
   },
   {
     "ContainingType": "webApi.Controllers.UserController",
-    "Method": "Delete",
-    "RelativePath": "api/User",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.UserController",
-    "Method": "GetByid",
+    "Method": "GetById",
     "RelativePath": "api/User/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -1036,6 +1020,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "webApi.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "webApi.Controllers.WishlistController",
     "Method": "GetAll",
     "RelativePath": "api/Wishlist",
@@ -1047,15 +1047,15 @@
   },
   {
     "ContainingType": "webApi.Controllers.WishlistController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Wishlist",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "wishlist",
-        "Type": "Domain.Models.Wishlist",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateWishlist",
         "IsRequired": true
       }
     ],
@@ -1070,8 +1070,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "wishlist",
-        "Type": "Domain.Models.Wishlist",
+        "Name": "req",
+        "Type": "webApi.Contracts.CreateAddress",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "webApi.Controllers.WishlistController",
+    "Method": "GetById",
+    "RelativePath": "api/Wishlist/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -1080,24 +1096,8 @@
   {
     "ContainingType": "webApi.Controllers.WishlistController",
     "Method": "Delete",
-    "RelativePath": "api/Wishlist",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "webApi.Controllers.WishlistController",
-    "Method": "GetByid",
     "RelativePath": "api/Wishlist/{id}",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

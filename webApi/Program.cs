@@ -34,10 +34,6 @@ namespace webApi
                 optoins.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilname));
             });
 
-
-
-
-
             builder.Services.AddDbContext<FlowersStoreContext>(
                 optionsAction: options => options.UseSqlServer(
                     connectionString: "Server=TIMA;Database=Flowers_store;Trusted_Connection=True;TrustServerCertificate=True;"));
@@ -59,16 +55,6 @@ namespace webApi
             builder.Services.AddScoped<ISupplierService, SupplierService>();
             builder.Services.AddScoped<ISupplierProductService, SupplierProductService>();
             builder.Services.AddScoped<IWishlistService, WishlistService>();
-
-
-
-
-
-
-
-
-
-
 
             builder.Services.AddCors(o => o.AddPolicy("MyPolicy", bulder =>
             {
