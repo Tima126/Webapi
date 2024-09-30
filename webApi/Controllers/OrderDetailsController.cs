@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using BusinessLogic.Services;
+using webApi.Contracts;
+using Mapster;
+using Domain.interfaces.Service;
 
 namespace webApi.Controllers
 {
@@ -8,64 +12,88 @@ namespace webApi.Controllers
     [ApiController]
     public class OrderDetailsController : ControllerBase
     {
-        public FlowersStoreContext Context { get; }
+        private readonly IOrderDetailsService _orderDetailsService;
 
-        public OrderDetailsController(FlowersStoreContext context)
+        public OrderDetailsController(IOrderDetailsService orderDetailsService)
         {
-            Context = context;
+            _orderDetailsService = orderDetailsService;
         }
 
-
+        /// <summary>
+        /// Получение всех деталей заказов.
+        /// </summary>
+        /// <returns>Список всех деталей заказов.</returns>
+        /// <response code="200">Возвращает список деталей заказов.</response>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<OrderDetail> orderStatuses = Context.OrderDetails.ToList();
-            return Ok(orderStatuses);
-
+            var dis = await _orderDetailsService.GetAll();
+            return Ok(dis);
         }
 
-
-
+        /// <summary>
+        /// Получение детали заказа по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор детали заказа.</param>
+        /// <returns>Деталь заказа с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает деталь заказа.</response>
+        /// <response code="400">Если деталь заказа не найдена.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetByid(int id)
         {
-            OrderDetail? orderDetail = Context.OrderDetails.Where(x => x.OrderDetailId == id).FirstOrDefault();
-            if (orderDetail == null)
+            var cat = await _orderDetailsService.GetById(id);
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(orderDetail);
+            return Ok(cat);
         }
 
+        /// <summary>
+        /// Добавление новой детали заказа.
+        /// </summary>
+        /// <param name="orderDetail">Данные новой детали заказа.</param>
+        /// <returns>Созданная деталь заказа.</returns>
+        /// <response code="200">Возвращает созданную деталь заказа.</response>
         [HttpPost]
-        public IActionResult Add(OrderDetail orderDetail)
+        public async Task<IActionResult> Create(CreateOrderDitail req)
         {
-            Context.OrderDetails.Add(orderDetail);
-            Context.SaveChanges();
-            return Ok(orderDetail);
-        }
-
-
-        [HttpPut]
-        public IActionResult Update(OrderDetail orderDetail)
-        {
-            Context.OrderDetails.Update(orderDetail);
-            Context.SaveChanges();
+            var cat = req.Adapt<OrderDetail>();
+            await _orderDetailsService.Create(cat);
             return Ok();
         }
 
-
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Обновление существующей детали заказа.
+        /// </summary>
+        /// <param name="orderDetail">Данные для обновления детали заказа.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="200">Если деталь заказа успешно обновлена.</response>
+        [HttpPut]
+        public async Task<IActionResult> Update(CreateOrderDitail disc)
         {
-            OrderDetail? orderDetail = Context.OrderDetails.Where(x => x.OrderDetailId == id).FirstOrDefault();
-            if (orderDetail == null)
+            var cat = disc.Adapt<OrderDetail>();
+            await _orderDetailsService.Update(cat);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Удаление детали заказа по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор детали заказа.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если деталь заказа успешно удалена.</response>
+        /// <response code="400">Если деталь заказа не найдена.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var cat = await _orderDetailsService.GetById(id);
+
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.OrderDetails.Remove(orderDetail);
-            Context.SaveChanges();
+            await _orderDetailsService.Delete(id);
             return Ok();
         }
     }

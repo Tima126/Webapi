@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using BusinessLogic.Services;
+using Domain.interfaces.Service;
+using webApi.Contracts;
+using Mapster;
 
 namespace webApi.Controllers
 {
@@ -9,67 +13,99 @@ namespace webApi.Controllers
     public class PaymentMetodsController : ControllerBase
     {
 
-        public FlowersStoreContext Context { get; }
+        private readonly IPaymentMethodService _paymentmethodService;
 
-        public PaymentMetodsController(FlowersStoreContext context)
+        public PaymentMetodsController(IPaymentMethodService paymentMethodService)
         {
-            Context = context;
+            _paymentmethodService = paymentMethodService;
         }
 
 
 
-
+        /// <summary>
+        /// Получение всех методов платежей.
+        /// </summary>
+        /// <returns>Список всех методов платежей.</returns>
+        /// <response code="200">Возвращает список методов платежей.</response>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<PaymentMethod> paymentMethods = Context.PaymentMethods.ToList();
-            return Ok(paymentMethods);
+            var dis = await _paymentmethodService.GetAll();
+            return Ok(dis);
         }
 
 
+
+        /// <summary>
+        /// Получение метода платежа по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор метода платежа.</param>
+        /// <returns> Метод Платежа с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает метод платежа.</response>
+        /// <response code="400">Если метод платеж не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetByid(int id)
         {
-            PaymentMethod? upaymentMethodsser = Context.PaymentMethods.Where(x => x.PaymentMethodId == id).FirstOrDefault();
-            if (upaymentMethodsser == null)
+            var cat = await _paymentmethodService.GetById(id);
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(upaymentMethodsser);
+            return Ok(cat);
         }
 
+
+
+
+        /// <summary>
+        /// Добавление нового метода платежа.
+        /// </summary>
+        /// <param name="payment">Данные нового метод платежа.</param>
+        /// <returns>Созданный платеж.</returns>
+        /// <response code="200">Возвращает созданный метод платежа.</response>
         [HttpPost]
-        public IActionResult Add(PaymentMethod upaymentMethodsser)
+        public async Task<IActionResult> Create(CreatePaymentMethod req)
         {
-            Context.PaymentMethods.Add(upaymentMethodsser);
-            Context.SaveChanges();
-            return Ok(upaymentMethodsser);
+            var cat = req.Adapt<PaymentMethod>();
+            await _paymentmethodService.Create(cat);
+            return Ok();
         }
 
 
+        /// <summary>
+        /// Обновление существующего метода платежа.
+        /// </summary>
+        /// <param name="payment">Данные для обновления метода платежа.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="200">Если метод платежа успешно обновлен.</response>
         [HttpPut]
-        public IActionResult Update(PaymentMethod upaymentMethodsser)
+        public async Task<IActionResult> Update(CreatePaymentMethod disc)
         {
-            Context.PaymentMethods.Update(upaymentMethodsser);
-            Context.SaveChanges();
-            return Ok();
+            var cat = disc.Adapt<PaymentMethod>();
+            await _paymentmethodService.Update(cat);
+            return NoContent();
         }
 
 
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Удаление метода платежа по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор метода платежа.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если метода платеж успешно удален.</response>
+        /// <response code="400">Если метода платеж не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            PaymentMethod? payment = Context.PaymentMethods.Where(x => x.PaymentMethodId == id).FirstOrDefault();
-            if (payment == null)
+            var cat = await _paymentmethodService.GetById(id);
+
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.PaymentMethods.Remove(payment);
-            Context.SaveChanges();
+            await _paymentmethodService.Delete(id);
             return Ok();
         }
-
 
     }
 }

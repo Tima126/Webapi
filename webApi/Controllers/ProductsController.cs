@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using BusinessLogic.Services;
+using webApi.Contracts;
+using Mapster;
+using Domain.interfaces.Service;
 
 namespace webApi.Controllers
 {
@@ -11,64 +15,93 @@ namespace webApi.Controllers
 
 
 
-        public FlowersStoreContext Context { get; }
+        private readonly IProductService _productService;
 
-
-        public ProductsController (FlowersStoreContext context)
+        public ProductsController(IProductService productService)
         {
-            Context = context;
+            _productService = productService;
         }
 
+        /// <summary>
+        /// Получение всех продуктов.
+        /// </summary>
+        /// <returns>Список всех продуктов.</returns>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Product> products = Context.Products.ToList();
+            var products = await _productService.GetAll();
             return Ok(products);
         }
 
+
+        /// <summary>
+        /// Получение продуктов по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор продуктов.</param>
+        /// <returns>продукт с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает продукт.</response>
+        /// <response code="404">Если адрес не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Product? products = Context.Products.Where(x => x.ProductId == id).FirstOrDefault();
-            if ( products== null)
+            var product = await _productService.GetById(id);
+            if (product == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(products);
-        }
-
-        [HttpPost]
-        public IActionResult Add(Product product)
-        {
-            Context.Products.Add(product);
-            Context.SaveChanges();
             return Ok(product);
         }
 
+        /// <summary>
+        /// Создание нового продукта.
+        /// </summary>
+        /// <param name="product">Данные нового продукта.</param>
+        /// <returns>Созданный продукт.</returns>
+        /// <response code="201">Возвращает созданный продукт.</response>
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateProducts req)
+        {
+            var address = req.Adapt<Product>();
+            await _productService.Create(address);
+            return Ok();
+        }
 
+        /// <summary>
+        /// Обновление существующего продукта.
+        /// </summary>
+        /// <param name="product">Данные для обновления продукта.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="204">Если продукт успешно обновлен.</response>
         [HttpPut]
-        public IActionResult Update(Product product)
+        public async Task<IActionResult> Update(CreateProducts req)
         {
-            Context.Products.Update(product);
-            Context.SaveChanges();
-            return Ok();
+            var product = req.Adapt<Product>();
+            await _productService.Update(product);
+
+            return NoContent();
         }
 
 
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Удаление продукта по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор продукта.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если продукт успешно удален.</response>
+        /// <response code="400">Если продукт не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            Product? product = Context.Products.Where(x => x.ProductId == id).FirstOrDefault();
-            if (product == null)
+            var address = await _productService.GetById(id);
+
+            if (address == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.Products.Remove(product);
-            Context.SaveChanges();
+            await _productService.Delete(id);
             return Ok();
         }
-
 
 
     }

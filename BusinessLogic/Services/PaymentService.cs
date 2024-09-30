@@ -36,15 +36,15 @@ namespace BusinessLogic.Services
         public async Task Create(Payment model)
         {
             await _repositoryWrapper.Payment.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
 
 
         public async Task Update(Payment model)
         {
-            _repositoryWrapper.Payment.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Payment.Update(model);
+            await _repositoryWrapper.Save();
         }
 
 
@@ -53,8 +53,8 @@ namespace BusinessLogic.Services
             var payment = await _repositoryWrapper.Payment
                 .FindByCondition(x => x.PaymentId== id);
 
-            _repositoryWrapper.Payment.Delete(payment.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Payment.Delete(payment.First());
+            await _repositoryWrapper.Save();
         }
 
 

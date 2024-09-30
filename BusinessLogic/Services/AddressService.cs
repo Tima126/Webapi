@@ -38,13 +38,13 @@ namespace BusinessLogic.Services
         {
             await _repositoryWrapper.Address.Create(model);
             
-           _repositoryWrapper.Save();
+           await _repositoryWrapper.Save();
         }
 
         public async Task Update(Address model)
         {
-            _repositoryWrapper.Address.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Address.Update(model);
+            await _repositoryWrapper.Save();
            
         }
 
@@ -52,8 +52,8 @@ namespace BusinessLogic.Services
         {
             var address = await _repositoryWrapper.Address.FindByCondition(x => x.AddressId == id);
 
-            _repositoryWrapper.Address.Delete(address.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Address.Delete(address.First());
+            await _repositoryWrapper.Save();
         }
 
 

@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Domain.Models;
+using BusinessLogic.Services;
+using Mapster;
+using webApi.Contracts;
+using Domain.interfaces.Service;
 
 namespace webApi.Controllers
 {
@@ -8,46 +12,35 @@ namespace webApi.Controllers
     [ApiController]
     public class AddressesController : ControllerBase
     {
-        public FlowersStoreContext Context { get; }
-        public AddressesController(FlowersStoreContext context)
+        private readonly IAddressService _addressesService;
+
+        public AddressesController(IAddressService addressService)
         {
-            Context = context;
+            _addressesService = addressService;
         }
 
-
-
         /// <summary>
-        /// Создание нового пользователя
+        /// Получение всех адресов.
         /// </summary>
-        /// <remarks>
-        /// Пример вывода:
-        ///
-        ///     POST /Todo
-        ///     {
-        ///        "addressId": 1,
-        ///        "address1": "ул. Ленина, 123",
-        ///        "city": "Москва",
-        ///        "postalCode": "123456",
-        ///        "country": "Россия",
-        ///        "users": []
-        ///     }
-        ///
-        /// </remarks>
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
-
-
+        /// <returns>Список всех адресов.</returns>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var addresses = Context.Addresses.ToList();
+            var addresses = await _addressesService.GetAll();
             return Ok(addresses);
         }
 
+        /// <summary>
+        /// Получение адреса по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор адреса.</param>
+        /// <returns>Адрес с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает адрес.</response>
+        /// <response code="404">Если адрес не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var address = Context.Addresses.Find(id);
+            var address = await _addressesService.GetById(id);
             if (address == null)
             {
                 return NotFound();
@@ -55,40 +48,53 @@ namespace webApi.Controllers
             return Ok(address);
         }
 
-
+        /// <summary>
+        /// Создание нового адреса.
+        /// </summary>
+        /// <param name="address">Данные нового адреса.</param>
+        /// <returns>Созданный адрес.</returns>
+        /// <response code="201">Возвращает созданный адрес.</response>
         [HttpPost]
-        public IActionResult Create(Address address)
+        public async Task<IActionResult> Create(CreateAddress req)
         {
-            Context.Addresses.Add(address);
-            Context.SaveChanges();
-            return CreatedAtAction(nameof(GetById), new { id = address.AddressId }, address);
-        }
-
-        [HttpPut]
-        public IActionResult Update(Address address)
-        {
-            
-            Context.Entry(address).State = EntityState.Modified;
-            Context.SaveChanges();
-            return NoContent();
-        }
-
-
-        [HttpDelete("id")]
-        public IActionResult Delete(int id)
-        {
-            Address? addres = Context.Addresses.Where(x => x.AddressId == id).FirstOrDefault();
-
-            if (addres == null)
-            {
-                return BadRequest(User);
-
-            }
-            Context.Addresses.Remove(addres);
-            Context.SaveChanges();
+            var address = req.Adapt<Address>();
+            await _addressesService.Create(address);
             return Ok();
         }
 
+        /// <summary>
+        /// Обновление существующего адреса.
+        /// </summary>
+        /// <param name="address">Данные для обновления адреса.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="204">Если адрес успешно обновлен.</response>
+        [HttpPut]
+        public async Task<IActionResult> Update(CreateAddress req)
+        {
+            var address = req.Adapt<Address>();
+            await _addressesService.Update(address);
 
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Удаление адреса по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор адреса.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если адрес успешно удален.</response>
+        /// <response code="400">Если адрес не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var address = await _addressesService.GetById(id);
+
+            if (address == null)
+            {
+                return BadRequest();
+            }
+            await _addressesService.Delete(id);
+            return Ok();
+        }
     }
 }

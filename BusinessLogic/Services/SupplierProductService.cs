@@ -37,15 +37,15 @@ namespace BusinessLogic.Services
         public async Task Create(SupplierProduct model)
         {
             await _repositoryWrapper.SupplierProduct.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
 
 
         public async Task Update(SupplierProduct model)
         {
-            _repositoryWrapper.SupplierProduct.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.SupplierProduct.Update(model);
+            await _repositoryWrapper.Save();
         }
 
 
@@ -54,8 +54,8 @@ namespace BusinessLogic.Services
             var supplierProduct = await _repositoryWrapper.SupplierProduct
                 .FindByCondition(x => x.SupplierProductId == id);
 
-            _repositoryWrapper.SupplierProduct.Delete(supplierProduct.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.SupplierProduct.Delete(supplierProduct.First());
+            await _repositoryWrapper.Save();
         }
 
 

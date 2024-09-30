@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using BusinessLogic.Services;
+using webApi.Contracts;
+using Mapster;
+using Domain.interfaces.Service;
 
 namespace webApi.Controllers
 {
@@ -8,67 +12,88 @@ namespace webApi.Controllers
     [ApiController]
     public class CategoriController : ControllerBase
     {
+        private readonly ICategoryService _categoryService;
 
-        public FlowersStoreContext Context { get; }
-
-        public CategoriController(FlowersStoreContext context)
+        public CategoriController(ICategoryService categoryService)
         {
-            Context = context;
+            _categoryService = categoryService;
         }
 
-
+        /// <summary>
+        /// Получение всех категорий.
+        /// </summary>
+        /// <returns>Список всех категорий.</returns>
+        /// <response code="200">Возвращает список категорий.</response>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Category> cate = Context.Categories.ToList();
-            return Ok(cate);
-
+            var categor = await _categoryService.GetAll();
+            return Ok(categor);
         }
 
-
-
+        /// <summary>
+        /// Получение категории по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор категории.</param>
+        /// <returns>Категория с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает категорию.</response>
+        /// <response code="400">Если категория не найдена.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Category? cate = Context.Categories.Where(x => x.CategoryId == id).FirstOrDefault();
-            if (cate == null)
+            var cat = await _categoryService.GetById(id);
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(cate);
+            return Ok(cat);
         }
 
+        /// <summary>
+        /// Добавление новой категории.
+        /// </summary>
+        /// <param name="category">Данные новой категории.</param>
+        /// <returns>Созданная категория.</returns>
+        /// <response code="200">Возвращает созданную категорию.</response>
         [HttpPost]
-        public IActionResult Add(Category cate)
+        public async Task<IActionResult> Create(CreateCategori req)
         {
-            Context.Categories.Add(cate);
-            Context.SaveChanges();
-            return Ok(cate);
+            var cat = req.Adapt<Category>();
+            await _categoryService.Create(cat);
+            return Ok();
         }
-
-
+        /// <summary>
+        /// Обновление существующей категории.
+        /// </summary>
+        /// <param name="category">Данные для обновления категории.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="200">Если категория успешно обновлена.</response>
         [HttpPut]
-        public IActionResult Update(Category cate)
+        public async Task<IActionResult> Update(CreateCategori req)
         {
-            Context.Categories.Update(cate);
-            Context.SaveChanges();
-            return Ok();
+            var cat = req.Adapt<Category>();
+            await _categoryService.Update(cat);
+            return NoContent();
         }
 
-
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Удаление категории по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор категории.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если категория успешно удалена.</response>
+        /// <response code="400">Если категория не найдена.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            Category? cate = Context.Categories.Where(x => x.CategoryId == id).FirstOrDefault();
-            if (cate == null)
+            var cat = await _categoryService.GetById(id);
+
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.Categories.Remove(cate);
-            Context.SaveChanges();
+            await _categoryService.Delete(id);
             return Ok();
         }
-
     }
 }

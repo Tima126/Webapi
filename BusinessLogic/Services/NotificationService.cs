@@ -38,15 +38,15 @@ namespace BusinessLogic.Services
         public async Task Create(Notification model)
         {
             await _repositoryWrapper.Notification.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
 
 
         public async Task Update(Notification model)
         {
-            _repositoryWrapper.Notification.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Notification.Update(model);
+            await _repositoryWrapper.Save();
         }
 
 
@@ -55,9 +55,10 @@ namespace BusinessLogic.Services
             var notification = await _repositoryWrapper.Notification
                 .FindByCondition(x => x.NotificationId == id);
 
-            _repositoryWrapper.Notification.Delete(notification.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Notification.Delete(notification.First());
+            await _repositoryWrapper.Save();
         }
+
 
     }
 }

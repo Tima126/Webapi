@@ -60,6 +60,27 @@
           }
         }
       },
+      "Mapster/7.4.1-pre01": {
+        "type": "package",
+        "dependencies": {
+          "Mapster.Core": "1.2.2-pre01"
+        },
+        "compile": {
+          "lib/net8.0/Mapster.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Mapster.dll": {}
+        }
+      },
+      "Mapster.Core/1.2.2-pre01": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Mapster.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Mapster.Core.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
         "type": "package",
         "compile": {
@@ -1770,6 +1791,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Mapster/7.4.1-pre01": {
+      "sha512": "b7YEDoh4nuODGF7wUjgkxA3bTLLt7TxfPkKiFQTgCrNYHem1VVaJyXgsG9RVeQQ44+hoo69IfqENNKn0ox9ddg==",
+      "type": "package",
+      "path": "mapster/7.4.1-pre01",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.dll",
+        "lib/net7.0/Mapster.dll",
+        "lib/net8.0/Mapster.dll",
+        "mapster.7.4.1-pre01.nupkg.sha512",
+        "mapster.nuspec"
+      ]
+    },
+    "Mapster.Core/1.2.2-pre01": {
+      "sha512": "FuNCfTHytW9yeSuGHZ9f8u4cgbzhPL0GqoypA4LD99m0zkafs73IcaMxmbUtYjRThof+Z+jcEQ/suVYTkMpTkA==",
+      "type": "package",
+      "path": "mapster.core/1.2.2-pre01",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.Core.dll",
+        "lib/net7.0/Mapster.Core.dll",
+        "lib/net8.0/Mapster.Core.dll",
+        "mapster.core.1.2.2-pre01.nupkg.sha512",
+        "mapster.core.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
@@ -5206,6 +5257,7 @@
     "net8.0": [
       "BusinessLogic >= 1.0.0",
       "DataAccess >= 1.0.0",
+      "Mapster >= 7.4.1-pre01",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0-rc.1.24451.1",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0-rc.1.24451.1",
       "Swashbuckle.AspNetCore >= 6.7.3"
@@ -5257,6 +5309,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Mapster": {
+            "target": "Package",
+            "version": "[7.4.1-pre01, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[9.0.0-rc.1.24451.1, )"

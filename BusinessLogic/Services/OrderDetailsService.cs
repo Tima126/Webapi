@@ -38,15 +38,15 @@ namespace BusinessLogic.Services
         public async Task Create(OrderDetail model)
         {
             await _repositoryWrapper.OrderDetail.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
 
 
         public async Task Update(OrderDetail model)
         {
-            _repositoryWrapper.OrderDetail.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.OrderDetail.Update(model);
+            await _repositoryWrapper.Save();
         }
 
 
@@ -55,8 +55,8 @@ namespace BusinessLogic.Services
             var orderDetail = await _repositoryWrapper.OrderDetail
                 .FindByCondition(x => x.OrderDetailId == id);
 
-            _repositoryWrapper.OrderDetail.Delete(orderDetail.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.OrderDetail.Delete(orderDetail.First());
+            await _repositoryWrapper.Save();
         }
 
     }

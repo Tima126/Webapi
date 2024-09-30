@@ -5,25 +5,606 @@
     </assembly>
     <members>
         <member name="M:webApi.Controllers.AddressesController.GetAll">
-             <summary>
-             Создание нового пользователя
-             </summary>
-             <remarks>
-             Пример вывода:
-            
-                 POST /Todo
-                 {
-                    "addressId": 1,
-                    "address1": "ул. Ленина, 123",
-                    "city": "Москва",
-                    "postalCode": "123456",
-                    "country": "Россия",
-                    "users": []
-                 }
-            
-             </remarks>
-             <param name="model">Пользователь</param>
-             <returns></returns>
+            <summary>
+            Получение всех адресов.
+            </summary>
+            <returns>Список всех адресов.</returns>
+        </member>
+        <member name="M:webApi.Controllers.AddressesController.GetById(System.Int32)">
+            <summary>
+            Получение адреса по идентификатору.
+            </summary>
+            <param name="id">Идентификатор адреса.</param>
+            <returns>Адрес с указанным идентификатором.</returns>
+            <response code="200">Возвращает адрес.</response>
+            <response code="404">Если адрес не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.AddressesController.Create(webApi.Contracts.CreateAddress)">
+            <summary>
+            Создание нового адреса.
+            </summary>
+            <param name="address">Данные нового адреса.</param>
+            <returns>Созданный адрес.</returns>
+            <response code="201">Возвращает созданный адрес.</response>
+        </member>
+        <member name="M:webApi.Controllers.AddressesController.Update(webApi.Contracts.CreateAddress)">
+            <summary>
+            Обновление существующего адреса.
+            </summary>
+            <param name="address">Данные для обновления адреса.</param>
+            <returns>Результат обновления.</returns>
+            <response code="204">Если адрес успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.AddressesController.Delete(System.Int32)">
+            <summary>
+            Удаление адреса по идентификатору.
+            </summary>
+            <param name="id">Идентификатор адреса.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если адрес успешно удален.</response>
+            <response code="400">Если адрес не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.CategoriController.GetAll">
+            <summary>
+            Получение всех категорий.
+            </summary>
+            <returns>Список всех категорий.</returns>
+            <response code="200">Возвращает список категорий.</response>
+        </member>
+        <member name="M:webApi.Controllers.CategoriController.GetById(System.Int32)">
+            <summary>
+            Получение категории по идентификатору.
+            </summary>
+            <param name="id">Идентификатор категории.</param>
+            <returns>Категория с указанным идентификатором.</returns>
+            <response code="200">Возвращает категорию.</response>
+            <response code="400">Если категория не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.CategoriController.Create(webApi.Contracts.CreateCategori)">
+            <summary>
+            Добавление новой категории.
+            </summary>
+            <param name="category">Данные новой категории.</param>
+            <returns>Созданная категория.</returns>
+            <response code="200">Возвращает созданную категорию.</response>
+        </member>
+        <member name="M:webApi.Controllers.CategoriController.Update(webApi.Contracts.CreateCategori)">
+            <summary>
+            Обновление существующей категории.
+            </summary>
+            <param name="category">Данные для обновления категории.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если категория успешно обновлена.</response>
+        </member>
+        <member name="M:webApi.Controllers.CategoriController.Delete(System.Int32)">
+            <summary>
+            Удаление категории по идентификатору.
+            </summary>
+            <param name="id">Идентификатор категории.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если категория успешно удалена.</response>
+            <response code="400">Если категория не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.DiscountController.GetAll">
+            <summary>
+            Получение всех скидок.
+            </summary>
+            <returns>Список всех скидок.</returns>
+            <response code="200">Возвращает список скидок.</response>
+        </member>
+        <member name="M:webApi.Controllers.DiscountController.GetByid(System.Int32)">
+            <summary>
+            Получение скидки по идентификатору.
+            </summary>
+            <param name="id">Идентификатор скидки.</param>
+            <returns>Скидка с указанным идентификатором.</returns>
+            <response code="200">Возвращает скидку.</response>
+            <response code="400">Если скидка не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.DiscountController.Create(webApi.Contracts.CreateDiscount)">
+            <summary>
+            Добавление новой скидки.
+            </summary>
+            <param name="disc">Данные новой скидки.</param>
+            <returns>Созданная скидка.</returns>
+            <response code="200">Возвращает созданную скидку.</response>
+        </member>
+        <member name="M:webApi.Controllers.DiscountController.Update(webApi.Contracts.CreateDiscount)">
+            <summary>
+            Обновление существующей скидки.
+            </summary>
+            <param name="disc">Данные для обновления скидки.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если скидка успешно обновлена.</response>
+        </member>
+        <member name="M:webApi.Controllers.DiscountController.Delete(System.Int32)">
+            <summary>
+            Удаление скидки по идентификатору.
+            </summary>
+            <param name="id">Идентификатор скидки.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если скидка успешно удалена.</response>
+            <response code="400">Если скидка не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationController.GetAll">
+            <summary>
+            Получение всех уведомлений.
+            </summary>
+            <returns>Список всех уведомлений.</returns>
+            <response code="200">Возвращает список уведомлений.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationController.GetById(System.Int32)">
+            <summary>
+            Получение уведомления по идентификатору.
+            </summary>
+            <param name="id">Идентификатор уведомления.</param>
+            <returns>Уведомление с указанным идентификатором.</returns>
+            <response code="200">Возвращает уведомление.</response>
+            <response code="400">Если уведомление не найдено.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationController.Create(webApi.Contracts.CreateNotification)">
+            <summary>
+            Добавление нового уведомления.
+            </summary>
+            <param name="notification">Данные нового уведомления.</param>
+            <returns>Созданное уведомление.</returns>
+            <response code="200">Возвращает созданное уведомление.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationController.Update(webApi.Contracts.CreateNotification)">
+            <summary>
+            Обновление существующего уведомления.
+            </summary>
+            <param name="notification">Данные для обновления уведомления.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если уведомление успешно обновлено.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationController.Delete(System.Int32)">
+            <summary>
+            Удаление уведомления по идентификатору.
+            </summary>
+            <param name="id">Идентификатор уведомления.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если уведомление успешно удалено.</response>
+            <response code="400">Если уведомление не найдено.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationTypeController.GetAll">
+            <summary>
+            Получение всех типов уведомлений.
+            </summary>
+            <returns>Список всех типов уведомлений.</returns>
+            <response code="200">Возвращает список типов уведомлений.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationTypeController.GetByid(System.Int32)">
+            <summary>
+            Получение типа уведомления по идентификатору.
+            </summary>
+            <param name="id">Идентификатор типа уведомления.</param>
+            <returns>Тип уведомления с указанным идентификатором.</returns>
+            <response code="200">Возвращает тип уведомления.</response>
+            <response code="400">Если тип уведомления не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationTypeController.Create(webApi.Contracts.CreateNotificationType)">
+            <summary>
+            Добавление нового типа уведомления.
+            </summary>
+            <param name="notificationType">Данные нового типа уведомления.</param>
+            <returns>Созданный тип уведомления.</returns>
+        </member>
+        <member name="M:webApi.Controllers.NotificationTypeController.Update(webApi.Contracts.CreateNotificationType)">
+            <summary>
+            Обновление существующего типа уведомления.
+            </summary>
+            <param name="notificationType">Данные для обновления типа уведомления.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если тип уведомления успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.NotificationTypeController.Delete(System.Int32)">
+            <summary>
+            Удаление типа уведомления по идентификатору.
+            </summary>
+            <param name="id">Идентификатор типа уведомления.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если тип уведомления успешно удален.</response>
+            <response code="400">Если тип уведомления не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderController.GetAll">
+            <summary>
+            Получение всех заказов.
+            </summary>
+            <returns>Список всех заказов.</returns>
+            <response code="200">Возвращает список заказов.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderController.GetByid(System.Int32)">
+            <summary>
+            Получение заказа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор заказа.</param>
+            <returns>Заказ с указанным идентификатором.</returns>
+            <response code="200">Возвращает заказ.</response>
+            <response code="400">Если заказ не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderController.Create(webApi.Contracts.CreateOrder)">
+            <summary>
+            Добавление нового заказа.
+            </summary>
+            <param name="order">Данные нового заказа.</param>
+            <returns>Созданный заказ.</returns>
+            <response code="200">Возвращает созданный заказ.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderController.Update(webApi.Contracts.CreateOrder)">
+            <summary>
+            Обновление существующего заказа.
+            </summary>
+            <param name="order">Данные для обновления заказа.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если заказ успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderController.Delete(System.Int32)">
+            <summary>
+            Удаление заказа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор заказа.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если заказ успешно удален.</response>
+            <response code="400">Если заказ не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderDetailsController.GetAll">
+            <summary>
+            Получение всех деталей заказов.
+            </summary>
+            <returns>Список всех деталей заказов.</returns>
+            <response code="200">Возвращает список деталей заказов.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderDetailsController.GetByid(System.Int32)">
+            <summary>
+            Получение детали заказа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор детали заказа.</param>
+            <returns>Деталь заказа с указанным идентификатором.</returns>
+            <response code="200">Возвращает деталь заказа.</response>
+            <response code="400">Если деталь заказа не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderDetailsController.Create(webApi.Contracts.CreateOrderDitail)">
+            <summary>
+            Добавление новой детали заказа.
+            </summary>
+            <param name="orderDetail">Данные новой детали заказа.</param>
+            <returns>Созданная деталь заказа.</returns>
+            <response code="200">Возвращает созданную деталь заказа.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderDetailsController.Update(webApi.Contracts.CreateOrderDitail)">
+            <summary>
+            Обновление существующей детали заказа.
+            </summary>
+            <param name="orderDetail">Данные для обновления детали заказа.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если деталь заказа успешно обновлена.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderDetailsController.Delete(System.Int32)">
+            <summary>
+            Удаление детали заказа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор детали заказа.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если деталь заказа успешно удалена.</response>
+            <response code="400">Если деталь заказа не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderStatusController.GetAll">
+            <summary>
+            Получение всех статусов заказов.
+            </summary>
+            <returns>Список всех статусов заказов.</returns>
+            <response code="200">Возвращает список статусов заказов.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderStatusController.GetByid(System.Int32)">
+            <summary>
+            Получение статуса заказа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор статуса заказа.</param>
+            <returns>Статус заказа с указанным идентификатором.</returns>
+            <response code="200">Возвращает статус заказа.</response>
+            <response code="400">Если статус заказа не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderStatusController.Create(webApi.Contracts.CreateOrderStatus)">
+            <summary>
+            Добавление нового статуса заказа.
+            </summary>
+            <param name="orderStatus">Данные нового статуса заказа.</param>
+            <returns>Созданный статус заказа.</returns>
+            <response code="200">Возвращает созданный статус заказа.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderStatusController.Update(webApi.Contracts.CreateOrderStatus)">
+            <summary>
+            Обновление существующего статуса заказа.
+            </summary>
+            <param name="orderStatus">Данные для обновления статуса заказа.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если статус заказа успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.OrderStatusController.Delete(System.Int32)">
+            <summary>
+            Удаление статуса заказа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор статуса заказа.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если статус заказа успешно удален.</response>
+            <response code="400">Если статус заказа не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentController.GetAll">
+            <summary>
+            Получение всех платежей.
+            </summary>
+            <returns>Список всех платежей.</returns>
+            <response code="200">Возвращает список платежей.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentController.GetByid(System.Int32)">
+            <summary>
+            Получение платежа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор платежа.</param>
+            <returns>Платеж с указанным идентификатором.</returns>
+            <response code="200">Возвращает платеж.</response>
+            <response code="400">Если платеж не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentController.Create(webApi.Contracts.CreatePayment)">
+            <summary>
+            Добавление нового платежа.
+            </summary>
+            <param name="payment">Данные нового платежа.</param>
+            <returns>Созданный платеж.</returns>
+            <response code="200">Возвращает созданный платеж.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentController.Update(webApi.Contracts.CreatePayment)">
+            <summary>
+            Обновление существующего платежа.
+            </summary>
+            <param name="payment">Данные для обновления платежа.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если платеж успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentController.Delete(System.Int32)">
+            <summary>
+            Удаление платежа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор платежа.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если платеж успешно удален.</response>
+            <response code="400">Если платеж не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentMetodsController.GetAll">
+            <summary>
+            Получение всех методов платежей.
+            </summary>
+            <returns>Список всех методов платежей.</returns>
+            <response code="200">Возвращает список методов платежей.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentMetodsController.GetByid(System.Int32)">
+            <summary>
+            Получение метода платежа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор метода платежа.</param>
+            <returns> Метод Платежа с указанным идентификатором.</returns>
+            <response code="200">Возвращает метод платежа.</response>
+            <response code="400">Если метод платеж не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentMetodsController.Create(webApi.Contracts.CreatePaymentMethod)">
+            <summary>
+            Добавление нового метода платежа.
+            </summary>
+            <param name="payment">Данные нового метод платежа.</param>
+            <returns>Созданный платеж.</returns>
+            <response code="200">Возвращает созданный метод платежа.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentMetodsController.Update(webApi.Contracts.CreatePaymentMethod)">
+            <summary>
+            Обновление существующего метода платежа.
+            </summary>
+            <param name="payment">Данные для обновления метода платежа.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если метод платежа успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.PaymentMetodsController.Delete(System.Int32)">
+            <summary>
+            Удаление метода платежа по идентификатору.
+            </summary>
+            <param name="id">Идентификатор метода платежа.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если метода платеж успешно удален.</response>
+            <response code="400">Если метода платеж не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.ProductsController.GetAll">
+            <summary>
+            Получение всех продуктов.
+            </summary>
+            <returns>Список всех продуктов.</returns>
+        </member>
+        <member name="M:webApi.Controllers.ProductsController.GetById(System.Int32)">
+            <summary>
+            Получение продуктов по идентификатору.
+            </summary>
+            <param name="id">Идентификатор продуктов.</param>
+            <returns>продукт с указанным идентификатором.</returns>
+            <response code="200">Возвращает продукт.</response>
+            <response code="404">Если адрес не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.ProductsController.Create(webApi.Contracts.CreateProducts)">
+            <summary>
+            Создание нового продукта.
+            </summary>
+            <param name="product">Данные нового продукта.</param>
+            <returns>Созданный продукт.</returns>
+            <response code="201">Возвращает созданный продукт.</response>
+        </member>
+        <member name="M:webApi.Controllers.ProductsController.Update(webApi.Contracts.CreateProducts)">
+            <summary>
+            Обновление существующего продукта.
+            </summary>
+            <param name="product">Данные для обновления продукта.</param>
+            <returns>Результат обновления.</returns>
+            <response code="204">Если продукт успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.ProductsController.Delete(System.Int32)">
+            <summary>
+            Удаление продукта по идентификатору.
+            </summary>
+            <param name="id">Идентификатор продукта.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если продукт успешно удален.</response>
+            <response code="400">Если продукт не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.ReviweController.GetAll">
+            <summary>
+            Получение всех отзывов.
+            </summary>
+            <returns>Список всех отзывов.</returns>
+            <response code="200">Возвращает список отзывов.</response>
+        </member>
+        <member name="M:webApi.Controllers.ReviweController.GetByid(System.Int32)">
+            <summary>
+            Получение отзовов по идентификатору.
+            </summary>
+            <param name="id">Идентификатор отзовов.</param>
+            <returns>Скидка с указанным идентификатором.</returns>
+            <response code="200">Возвращает отзова.</response>
+            <response code="400">Если отзова не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.ReviweController.Create(webApi.Contracts.CreateReviwe)">
+            <summary>
+            Добавление новой скидки.
+            </summary>
+            <param name="reviwe">Данные нового отзова.</param>
+            <returns>Созданная скидка.</returns>
+            <response code="200">Возвращает созданную скидку.</response>
+        </member>
+        <member name="M:webApi.Controllers.ReviweController.Update(webApi.Contracts.CreateReviwe)">
+            <summary>
+            Обновление существующего отзова.
+            </summary>
+            <param name="disc">Данные для обновления отзова.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если отзов успешно обновлена.</response>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:webApi.Controllers.ReviweController.Delete(System.Int32)" -->
+        <member name="M:webApi.Controllers.SupplierController.GetAll">
+            <summary>
+            Получение всех поставщиков.
+            </summary>
+            <returns>Список всех поставщиков.</returns>
+            <response code="200">Возвращает список поставщиков.</response>
+        </member>
+        <member name="M:webApi.Controllers.SupplierController.GetByid(System.Int32)">
+            <summary>
+            Получение поставщиков по идентификатору.
+            </summary>
+            <param name="id">Идентификатор поставщиков.</param>
+            <returns>поставщик с указанным идентификатором.</returns>
+            <response code="200">Возвращает поставщика.</response>
+            <response code="400">Если поставщик не найдена.</response>
+        </member>
+        <member name="M:webApi.Controllers.SupplierController.Create(webApi.Contracts.CreateSupplier)">
+            <summary>
+            Добавление нового поставщика.
+            </summary>
+            <param name="reviwe">Данные нового поставщика.</param>
+            <returns>Создание поставщика.</returns>
+            <response code="200">Возвращает созданного поставщика.</response>
+        </member>
+        <member name="M:webApi.Controllers.SupplierController.Update(webApi.Contracts.CreateSupplier)">
+            <summary>
+            Обновление существующего поставщика.
+            </summary>
+            <param name="disc">Данные для обновления поставщика.</param>
+            <returns>Результат обновления.</returns>
+            <response code="200">Если поставщик успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.SupplierController.Delete(System.Int32)">
+            <summary>
+            Удаление поставщика по идентификатору.
+            </summary>
+            <param name="id">Идентификатор поставщика.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если поставщик успешно удален.</response>
+            <response code="400">Если поставщик не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.UserController.GetAll">
+            <summary>
+            Получение всех продуктов.
+            </summary>
+            <returns>Список всех продуктов.</returns>
+        </member>
+        <member name="M:webApi.Controllers.UserController.GetById(System.Int32)">
+            <summary>
+            Получение пользователя по идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>пользователь с указанным идентификатором.</returns>
+            <response code="200">Возвращает пользователя.</response>
+            <response code="404">Если пользователь не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.UserController.Create(webApi.Contracts.CreateUser)">
+            <summary>
+            Создание нового пользователя.
+            </summary>
+            <param name="product">Данные нового пользователя.</param>
+            <returns>Созданние пользователя.</returns>
+            <response code="201">Возвращает созданного пользователя.</response>
+        </member>
+        <member name="M:webApi.Controllers.UserController.Update(webApi.Contracts.CreateProducts)">
+            <summary>
+            Обновление существующего продукта.
+            </summary>
+            <param name="product">Данные для обновления пользователя.</param>
+            <returns>Результат обновления.</returns>
+            <response code="204">Если пользователь успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Удаление пользователя по идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если пользователь успешно удален.</response>
+            <response code="400">Если пользователь не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.WishlistController.GetAll">
+            <summary>
+            Получение всех Список желаний.
+            </summary>
+            <returns>Список всех желаний.</returns>
+        </member>
+        <member name="M:webApi.Controllers.WishlistController.GetById(System.Int32)">
+            <summary>
+            Получение Список желаний по идентификатору.
+            </summary>
+            <param name="id">Идентификатор Список желаний.</param>
+            <returns>Список желаний с указанным идентификатором.</returns>
+            <response code="200">Возвращает Список желаний.</response>
+            <response code="404">Если  желания не найден.</response>
+        </member>
+        <member name="M:webApi.Controllers.WishlistController.Create(webApi.Contracts.CreateWishlist)">
+            <summary>
+            Создание нового желания.
+            </summary>
+            <param name="address">Данные нового желания.</param>
+            <returns>Созданный Список желания.</returns>
+            <response code="201">Возвращает созданный Список желания.</response>
+        </member>
+        <member name="M:webApi.Controllers.WishlistController.Update(webApi.Contracts.CreateAddress)">
+            <summary>
+            Обновление существующего адреса.
+            </summary>
+            <param name="address">Данные для обновления адреса.</param>
+            <returns>Результат обновления.</returns>
+            <response code="204">Если адрес успешно обновлен.</response>
+        </member>
+        <member name="M:webApi.Controllers.WishlistController.Delete(System.Int32)">
+            <summary>
+            Удаление Список желания по идентификатору.
+            </summary>
+            <param name="id">Идентификатор Список желания.</param>
+            <returns>Результат удаления.</returns>
+            <response code="200">Если Список желания успешно удален.</response>
+            <response code="400">Если Список желания не найден.</response>
         </member>
     </members>
 </doc>

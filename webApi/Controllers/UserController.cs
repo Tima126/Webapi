@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using Domain.interfaces.Service;
+using BusinessLogic.Services;
+using webApi.Contracts;
+using Mapster;
 
 namespace webApi.Controllers
 {
@@ -9,68 +13,93 @@ namespace webApi.Controllers
     public class UserController : ControllerBase
     {
 
-        public FlowersStoreContext Context { get; }
+        private readonly IUserService _user;
 
-        public UserController(FlowersStoreContext context)
+        public UserController(IUserService user)
         {
-            Context = context;
+            _user = user;
         }
 
 
 
 
+        /// <summary>
+        /// Получение всех продуктов.
+        /// </summary>
+        /// <returns>Список всех продуктов.</returns>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<User> user = Context.Users.ToList();
-            return Ok(user);
+            var products = await _user.GetAll();
+            return Ok(products);
         }
 
-
+        /// <summary>
+        /// Получение пользователя по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор пользователя.</param>
+        /// <returns>пользователь с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает пользователя.</response>
+        /// <response code="404">Если пользователь не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            User? user = Context.Users.Where(x => x.UserId == id).FirstOrDefault();
-            if (user == null)
+            var product = await _user.GetById(id);
+            if (product == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(user);
+            return Ok(product);
         }
 
+        /// <summary>
+        /// Создание нового пользователя.
+        /// </summary>
+        /// <param name="product">Данные нового пользователя.</param>
+        /// <returns>Созданние пользователя.</returns>
+        /// <response code="201">Возвращает созданного пользователя.</response>
         [HttpPost]
-        public IActionResult Add (User user)
+        public async Task<IActionResult> Create(CreateUser req)
         {
-            Context.Users.Add(user);
-            Context.SaveChanges();
-            return Ok(user);
-        }
-
-
-        [HttpPut]
-        public IActionResult Update(User user)
-        {
-            Context.Users.Update(user);
-            Context.SaveChanges();
+            var user = req.Adapt<User>();
+            await _user.Create(user);
             return Ok();
         }
 
 
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Обновление существующего продукта.
+        /// </summary>
+        /// <param name="product">Данные для обновления пользователя.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="204">Если пользователь успешно обновлен.</response>
+        [HttpPut]
+        public async Task<IActionResult> Update(CreateProducts req)
         {
-            User? user = Context.Users.Where(x => x.UserId == id).FirstOrDefault();
+            var user = req.Adapt<User>();
+            await _user.Update(user);
+
+            return NoContent();
+        }
+        /// <summary>
+        /// Удаление пользователя по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор пользователя.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если пользователь успешно удален.</response>
+        /// <response code="400">Если пользователь не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var user = await _user.GetById(id);
+
             if (user == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.Users.Remove(user);
-            Context.SaveChanges();
+            await _user.Delete(id);
             return Ok();
         }
-
-
 
 
     }

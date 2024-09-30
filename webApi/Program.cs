@@ -37,9 +37,12 @@ namespace webApi
 
 
 
-            
 
+            builder.Services.AddDbContext<FlowersStoreContext>(
+                optionsAction: options => options.UseSqlServer(
+                    connectionString: "Server=TIMA;Database=Flowers_store;Trusted_Connection=True;TrustServerCertificate=True;"));
 
+           
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
@@ -62,9 +65,6 @@ namespace webApi
 
 
 
-            builder.Services.AddDbContext<FlowersStoreContext>(
-                optionsAction:options => options.UseSqlServer(
-                    connectionString: "Server=TIMA;Database=Flowers_store;Trusted_Connection=True;TrustServerCertificate=True;"));
 
 
 

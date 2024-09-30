@@ -37,15 +37,15 @@ namespace BusinessLogic.Services
         public async Task Create(Wishlist model)
         {
             await _repositoryWrapper.Wishlist.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
 
 
         public async Task Update(Wishlist model)
         {
-            _repositoryWrapper.Wishlist.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Wishlist.Update(model);
+            await _repositoryWrapper.Save();
         }
 
 
@@ -54,8 +54,8 @@ namespace BusinessLogic.Services
             var wishlist = await _repositoryWrapper.Wishlist
                 .FindByCondition(x => x.WishlistId == id);
 
-            _repositoryWrapper.Wishlist.Delete(wishlist.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Wishlist.Delete(wishlist.First());
+            await _repositoryWrapper.Save();
         }
 
     }

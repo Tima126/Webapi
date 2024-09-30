@@ -1,6 +1,10 @@
-﻿using Domain.Models;
+﻿using BusinessLogic.Services;
+using Domain.interfaces.Service;
+using Domain.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using webApi.Contracts;
 
 namespace webApi.Controllers
 {
@@ -8,66 +12,87 @@ namespace webApi.Controllers
     [ApiController]
     public class PaymentController : ControllerBase
     {
+        private readonly IPaymentService _paymentService;
 
-
-        public FlowersStoreContext Context { get; }
-
-        public PaymentController(FlowersStoreContext context)
+        public PaymentController(IPaymentService paymentService)
         {
-            Context = context;
+            _paymentService = paymentService;
         }
 
-
+        /// <summary>
+        /// Получение всех платежей.
+        /// </summary>
+        /// <returns>Список всех платежей.</returns>
+        /// <response code="200">Возвращает список платежей.</response>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Payment> orderStatuses = Context.Payments.ToList();
-            return Ok(orderStatuses);
-
+            var dis = await _paymentService.GetAll();
+            return Ok(dis);
         }
 
-
-
+        /// <summary>
+        /// Получение платежа по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор платежа.</param>
+        /// <returns>Платеж с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает платеж.</response>
+        /// <response code="400">Если платеж не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetByid(int id)
         {
-            Payment? payment = Context.Payments.Where(x => x.PaymentId == id).FirstOrDefault();
-            if (payment == null)
+            var cat = await _paymentService.GetById(id);
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(payment);
+            return Ok(cat);
         }
-
+        /// <summary>
+        /// Добавление нового платежа.
+        /// </summary>
+        /// <param name="payment">Данные нового платежа.</param>
+        /// <returns>Созданный платеж.</returns>
+        /// <response code="200">Возвращает созданный платеж.</response>
         [HttpPost]
-        public IActionResult Add(Payment payment)
+        public async Task<IActionResult> Create(CreatePayment req)
         {
-            Context.Payments.Add(payment);
-            Context.SaveChanges();
-            return Ok(payment);
-        }
-
-
-        [HttpPut]
-        public IActionResult Update(Payment payment)
-        {
-            Context.Payments.Update(payment);
-            Context.SaveChanges();
+            var cat = req.Adapt<Payment>();
+            await _paymentService.Create(cat);
             return Ok();
         }
 
-
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Обновление существующего платежа.
+        /// </summary>
+        /// <param name="payment">Данные для обновления платежа.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="200">Если платеж успешно обновлен.</response>
+        [HttpPut]
+        public async Task<IActionResult> Update(CreatePayment disc)
         {
-            Payment? pyment = Context.Payments.Where(x => x.PaymentId == id).FirstOrDefault();
-            if (pyment == null)
+            var cat = disc.Adapt<Payment>();
+            await _paymentService.Update(cat);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Удаление платежа по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор платежа.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если платеж успешно удален.</response>
+        /// <response code="400">Если платеж не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var cat = await _paymentService.GetById(id);
+
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.Payments.Remove(pyment);
-            Context.SaveChanges();
+            await _paymentService.Delete(id);
             return Ok();
         }
     }

@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using Domain.interfaces.Service;
+using webApi.Contracts;
+using Mapster;
 
 namespace webApi.Controllers
 {
@@ -8,64 +11,87 @@ namespace webApi.Controllers
     [ApiController]
     public class WishlistController : ControllerBase
     {
-        public FlowersStoreContext Context { get; }
+        private readonly IWishlistService _wishlistService;
 
-        public WishlistController(FlowersStoreContext context)
+        public WishlistController(IWishlistService wishlist)
         {
-            Context = context;
+            _wishlistService = wishlist;
         }
 
-
-
-
+        /// <summary>
+        /// Получение всех Список желаний.
+        /// </summary>
+        /// <returns>Список всех желаний.</returns>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Wishlist> wishlists = Context.Wishlists.ToList();
-            return Ok(wishlists);
+            var addresses = await _wishlistService.GetAll();
+            return Ok(addresses);
         }
 
-
+        /// <summary>
+        /// Получение Список желаний по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор Список желаний.</param>
+        /// <returns>Список желаний с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает Список желаний.</response>
+        /// <response code="404">Если  желания не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Wishlist? wishlist = Context.Wishlists.Where(x => x.WishlistId == id).FirstOrDefault();
-            if (wishlist == null)
+            var address = await _wishlistService.GetById(id);
+            if (address == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(wishlist);
+            return Ok(address);
         }
-
+        /// <summary>
+        /// Создание нового желания.
+        /// </summary>
+        /// <param name="address">Данные нового желания.</param>
+        /// <returns>Созданный Список желания.</returns>
+        /// <response code="201">Возвращает созданный Список желания.</response>
         [HttpPost]
-        public IActionResult Add(Wishlist wishlist)
+        public async Task<IActionResult> Create(CreateWishlist req)
         {
-            Context.Wishlists.Add(wishlist);
-            Context.SaveChanges();
-            return Ok(wishlist);
-        }
-
-
-        [HttpPut]
-        public IActionResult Update(Wishlist wishlist)
-        {
-            Context.Wishlists.Update(wishlist);
-            Context.SaveChanges();
+            var wh = req.Adapt<Wishlist>();
+            await _wishlistService.Create(wh);
             return Ok();
         }
 
-
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Обновление существующего адреса.
+        /// </summary>
+        /// <param name="address">Данные для обновления адреса.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="204">Если адрес успешно обновлен.</response>
+        [HttpPut]
+        public async Task<IActionResult> Update(CreateAddress req)
         {
-            Wishlist? payment = Context.Wishlists.Where(x => x.WishlistId == id).FirstOrDefault();
-            if (payment == null)
+            var address = req.Adapt<Wishlist>();
+            await _wishlistService.Update(address);
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Удаление Список желания по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор Список желания.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если Список желания успешно удален.</response>
+        /// <response code="400">Если Список желания не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var address = await _wishlistService.GetById(id);
+
+            if (address == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.Wishlists.Remove(payment);
-            Context.SaveChanges();
+            await _wishlistService.Delete(id);
             return Ok();
         }
     }

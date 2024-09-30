@@ -38,15 +38,15 @@ namespace BusinessLogic.Services
         public async Task Create(Discount model)
         {
             await _repositoryWrapper.Discount.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Save();
         }
 
 
 
         public async Task Update(Discount model)
         {
-            _repositoryWrapper.Discount.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Discount.Update(model);
+            await _repositoryWrapper.Save();
         }
 
 
@@ -55,8 +55,8 @@ namespace BusinessLogic.Services
             var discount = await _repositoryWrapper.Discount
                 .FindByCondition(x => x.DiscountId == id);
 
-            _repositoryWrapper.Discount.Delete(discount.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Discount.Delete(discount.First());
+            await _repositoryWrapper.Save();
         }
 
     }

@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
+using BusinessLogic.Services;
+using Domain.interfaces.Service;
+using webApi.Contracts;
+using Mapster;
+
 
 namespace webApi.Controllers
 {
@@ -8,59 +13,86 @@ namespace webApi.Controllers
     [ApiController]
     public class NotificationTypeController : ControllerBase
     {
-        public FlowersStoreContext Context { get; }
+        private readonly INotificationTypeService _notificationType;
 
-        public NotificationTypeController(FlowersStoreContext context)
+        public NotificationTypeController(INotificationTypeService notificationType)
         {
-            Context = context;
+            _notificationType = notificationType;
         }
-
-
+        /// <summary>
+        /// Получение всех типов уведомлений.
+        /// </summary>
+        /// <returns>Список всех типов уведомлений.</returns>
+        /// <response code="200">Возвращает список типов уведомлений.</response>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<NotificationType> notifications = Context.NotificationTypes.ToList();
-            return Ok(notifications);
-
+            var dis = await _notificationType.GetAll();
+            return Ok(dis);
         }
 
+        /// <summary>
+        /// Получение типа уведомления по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор типа уведомления.</param>
+        /// <returns>Тип уведомления с указанным идентификатором.</returns>
+        /// <response code="200">Возвращает тип уведомления.</response>
+        /// <response code="400">Если тип уведомления не найден.</response>
         [HttpGet("{id}")]
-        public IActionResult GetByid(int id)
+        public async Task<IActionResult> GetByid(int id)
         {
-            NotificationType? notifications = Context.NotificationTypes.Where(x => x.NotificationTypeId == id).FirstOrDefault();
-            if (notifications == null)
+            var cat = await _notificationType.GetById(id);
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return NotFound();
             }
-            return Ok(notifications);
+            return Ok(cat);
         }
 
+
+        /// <summary>
+        /// Добавление нового типа уведомления.
+        /// </summary>
+        /// <param name="notificationType">Данные нового типа уведомления.</param>
+        /// <returns>Созданный тип уведомления.</returns>
         [HttpPost]
-        public IActionResult Add(NotificationType notification)
+        public async Task<IActionResult> Create(CreateNotificationType req)
         {
-            Context.NotificationTypes.Add(notification);
-            Context.SaveChanges();
-            return Ok(notification);
-        }
-
-        [HttpPut]
-        public IActionResult Update(NotificationType notification)
-        {
-            Context.NotificationTypes.Update(notification);
-            Context.SaveChanges();
+            var cat = req.Adapt<NotificationType>();
+            await _notificationType.Create(cat);
             return Ok();
         }
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Обновление существующего типа уведомления.
+        /// </summary>
+        /// <param name="notificationType">Данные для обновления типа уведомления.</param>
+        /// <returns>Результат обновления.</returns>
+        /// <response code="200">Если тип уведомления успешно обновлен.</response>
+        [HttpPut]
+        public async Task<IActionResult> Update(CreateNotificationType disc)
         {
-            NotificationType? notification = Context.NotificationTypes.Where(x => x.NotificationTypeId == id).FirstOrDefault();
-            if (notification == null)
+            var cat = disc.Adapt<NotificationType>();
+            await _notificationType.Update(cat);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Удаление типа уведомления по идентификатору.
+        /// </summary>
+        /// <param name="id">Идентификатор типа уведомления.</param>
+        /// <returns>Результат удаления.</returns>
+        /// <response code="200">Если тип уведомления успешно удален.</response>
+        /// <response code="400">Если тип уведомления не найден.</response>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var cat = await _notificationType.GetById(id);
+
+            if (cat == null)
             {
-                return BadRequest("Not Found");
+                return BadRequest();
             }
-            Context.NotificationTypes.Remove(notification);
-            Context.SaveChanges();
+            await _notificationType.Delete(id);
             return Ok();
         }
     }
