@@ -9,6 +9,7 @@ using Domain.interfaces;
 using Domain.interfaces.Service;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
+using FluentValidation.Results;
 
 namespace BusinessLogic.Services
 {
@@ -50,7 +51,7 @@ namespace BusinessLogic.Services
             if (!validationResult.IsValid)
             {
                 var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
-                var errorMessageString = string.Join(", ", errorMessages);
+                string errorMessageString = string.Join(", ", errorMessages);
                 throw new ValidationException(errorMessageString);
             }
 
@@ -65,6 +66,17 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException(nameof(model));
             }
+
+            var validator = new UserValidator();
+            var validationResult = validator.Validate(model);
+            if (!validationResult.IsValid)
+            {
+                var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
+                string errorMessageString = string.Join(", ", errorMessages);
+                throw new ValidationException(errorMessageString);
+            }
+
+
             await _repositoryWrapper.User.Update(model);
             await _repositoryWrapper.Save();
         }

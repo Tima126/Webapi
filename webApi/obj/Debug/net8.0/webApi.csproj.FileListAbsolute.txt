@@ -741,3 +741,4 @@ C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\webApi\obj\D
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\webApi\obj\Debug\net8.0\webApi.genruntimeconfig.cache
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\webApi\obj\Debug\net8.0\ref\webApi.dll
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\webApi\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\timaf\Documents\GitHub\Webapi\webApi\bin\Debug\net8.0\FluentValidation.dll

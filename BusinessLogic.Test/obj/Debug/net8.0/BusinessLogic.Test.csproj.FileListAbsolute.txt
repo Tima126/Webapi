@@ -319,3 +319,4 @@ C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogi
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogic.Test\obj\Debug\net8.0\BusinessLogic.Test.genruntimeconfig.cache
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogic.Test\obj\Debug\net8.0\ref\BusinessLogic.Test.dll
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogic.Test\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\timaf\Documents\GitHub\Webapi\BusinessLogic.Test\bin\Debug\net8.0\FluentValidation.dll

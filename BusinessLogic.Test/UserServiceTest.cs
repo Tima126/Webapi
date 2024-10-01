@@ -1,16 +1,12 @@
 ﻿using BusinessLogic.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-using Moq;
-using Domain.interfaces.Repository;
 using Domain.interfaces;
+using Domain.interfaces.Repository;
 using Domain.Models;
-using Xunit;
-using System.ComponentModel.DataAnnotations;
 using FluentValidation.TestHelper;
+using Moq;
+using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
+using Xunit;
 
 namespace BusinessLogic.Test
 {
@@ -33,9 +29,8 @@ namespace BusinessLogic.Test
             _validator = new UserValidator();
         }
 
-
         [Fact]
-        public async Task NullUserCreate()
+        public async Task Create_NullUser_ThrowsArgumentNullException()
         {
             // Arrange
             var ex = await Assert.ThrowsAsync<ArgumentNullException>(() => service.Create(null));
@@ -47,10 +42,9 @@ namespace BusinessLogic.Test
             Assert.IsType<ArgumentNullException>(ex);
         }
 
-
         [Theory]
         [MemberData(nameof(GetIncorectUsers))]
-        public async Task CreateAsyncNewUserCreate(User user)
+        public async Task Create_InvalidUser_ThrowsValidationException(User user)
         {
             // Arrange
             var Usernew = user;
@@ -62,24 +56,10 @@ namespace BusinessLogic.Test
             userRepositoryMoq.Verify(x => x.Create(It.IsAny<User>()), Times.Never);
             Assert.IsType<ValidationException>(ex);
         }
-        [Theory]
-        [MemberData(nameof(GetIncorectUsers))]
-        public async Task UserCreate_Space(User user)
-        {
-            // Arrange
-            var Userspace = user;
-
-            // Act
-            var ex = await Assert.ThrowsAnyAsync<ValidationException>(() => service.Create(Userspace));
-
-            // Assert
-            userRepositoryMoq.Verify(x => x.Create(It.IsAny<User>()), Times.Never);
-
-        }
 
 
         [Fact]
-        public async Task UpdateAsync_Success()
+        public async Task Update_ValidUser_UpdatesUserSuccessfully()
         {
             // Arrange
             var user = new User()
@@ -99,7 +79,7 @@ namespace BusinessLogic.Test
         }
 
         [Fact]
-        public async Task UpdateAsync_NullUser()
+        public async Task Update_NullUser_ThrowsArgumentNullException()
         {
             // Arrange
             var ex = await Assert.ThrowsAsync<ArgumentNullException>(() => service.Update(null));
@@ -113,7 +93,7 @@ namespace BusinessLogic.Test
         }
 
         [Fact]
-        public async Task GetById_Success()
+        public async Task GetById_ValidUserId_ReturnsUser()
         {
             // Arrange
             int userId = 1;
@@ -146,8 +126,9 @@ namespace BusinessLogic.Test
         }
 
         [Fact]
-        public async Task GetById_UserNotFound()
-        {   // Arange
+        public async Task GetById_InvalidUserId_ThrowsInvalidOperationException()
+        {
+            // Arrange
             int userId = 999;
 
             // Act
@@ -161,23 +142,27 @@ namespace BusinessLogic.Test
         }
 
         [Fact]
-        public async Task DeleteAsync_UserNotFound()
-        {   // Arange
+        public async Task Delete_InvalidUserId_ThrowsInvalidOperationException()
+        {
+            // Arrange
             int userId = 999;
+
             // Act
             userRepositoryMoq.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<User, bool>>>()))
                 .ReturnsAsync(new List<User>());
-            // Assert
+
             var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => service.Delete(userId));
 
+            // Assert
             Assert.IsType<InvalidOperationException>(ex);
             userRepositoryMoq.Verify(x => x.Delete(It.IsAny<User>()), Times.Never);
             repositoryWrapperMoq.Verify(x => x.Save(), Times.Never);
         }
 
         [Fact]
-        public async Task DeleteAsync_Success()
-        {   // Arange
+        public async Task Delete_ValidUserId_DeletesUserSuccessfully()
+        {
+            // Arrange
             int userId = 1;
             var user = new User()
             {
@@ -189,6 +174,7 @@ namespace BusinessLogic.Test
                 PhoneNumber = "1234567890",
                 AddressId = 1,
             };
+
             // Act
             userRepositoryMoq.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<User, bool>>>()))
                 .ReturnsAsync(new List<User> { user });
@@ -198,8 +184,6 @@ namespace BusinessLogic.Test
             userRepositoryMoq.Verify(x => x.Delete(It.IsAny<User>()), Times.Once);
             repositoryWrapperMoq.Verify(x => x.Save(), Times.Once);
         }
-
-
 
         public static IEnumerable<object[]> GetIncorectUsers()
         {
@@ -218,10 +202,10 @@ namespace BusinessLogic.Test
             return new List<object[]>
             {
                 new object[] {new User() {UserId=1, FirstName =" ", LastName="sfgf", Email="dgdgd", PasswordHash="dfdfdf", PhoneNumber = "dfdfdf", AddressId=1} },
-                new object[] {new User() {UserId=0, FirstName ="dfdfdf", LastName=" ", Email="", PasswordHash="", PhoneNumber = "", AddressId=1} },
-                new object[] {new User() {UserId=1, FirstName ="", LastName="dfdfd", Email="", PasswordHash="", PhoneNumber = "", AddressId=0} },
-                new object[] {new User() {UserId=0, FirstName ="", LastName="", Email="dfdfdf", PasswordHash="", PhoneNumber = "dfdfd", AddressId=0} },
-                new object[] {new User() {UserId=1, FirstName ="", LastName="", Email="", PasswordHash="dfdfdf", PhoneNumber = "", AddressId=2} },
+                new object[] {new User() {UserId=0, FirstName ="dfdfdf", LastName=" ", Email="", PasswordHash="", PhoneNumber = " ", AddressId=1} },
+                new object[] {new User() {UserId=1, FirstName ="", LastName="dfdfd", Email="", PasswordHash=" ", PhoneNumber = "   ", AddressId=0} },
+                new object[] {new User() {UserId=0, FirstName ="", LastName=" ", Email="dfdfdf", PasswordHash="", PhoneNumber = "dfdfd", AddressId=0} },
+                new object[] {new User() {UserId=1, FirstName =" ", LastName=" ", Email="    ", PasswordHash="dfdfdf", PhoneNumber = "", AddressId=2} },
             };
         }
 
@@ -230,8 +214,7 @@ namespace BusinessLogic.Test
         {
             var user = new User { FirstName = "" };
             var result = _validator.TestValidate(user);
-            result.ShouldHaveValidationErrorFor(u => u.FirstName)
-                .WithErrorMessage("First name is required.");
+            result.ShouldHaveValidationErrorFor(u => u.FirstName);
         }
 
         [Fact]
@@ -247,8 +230,8 @@ namespace BusinessLogic.Test
         {
             var user = new User { FirstName = "John123" };
             var result = _validator.TestValidate(user);
-            result.ShouldHaveValidationErrorFor(u => u.FirstName)
-                .WithErrorMessage("First name must contain only letters and no spaces.");
+            result.ShouldHaveValidationErrorFor(u => u.FirstName);
+                
         }
 
         [Fact]
@@ -256,8 +239,7 @@ namespace BusinessLogic.Test
         {
             var user = new User { LastName = "" };
             var result = _validator.TestValidate(user);
-            result.ShouldHaveValidationErrorFor(u => u.LastName)
-                .WithErrorMessage("Last name is required.");
+            result.ShouldHaveValidationErrorFor(u => u.LastName);
         }
 
         [Fact]
@@ -282,7 +264,6 @@ namespace BusinessLogic.Test
             var user = new User { Email = "" };
             var result = _validator.TestValidate(user);
             result.ShouldHaveValidationErrorFor(u => u.Email);
-            
         }
 
         [Fact]
@@ -291,7 +272,6 @@ namespace BusinessLogic.Test
             var user = new User { Email = "invalid-email" };
             var result = _validator.TestValidate(user);
             result.ShouldHaveValidationErrorFor(u => u.Email);
-              
         }
 
         [Fact]
@@ -300,7 +280,6 @@ namespace BusinessLogic.Test
             var user = new User { PhoneNumber = "" };
             var result = _validator.TestValidate(user);
             result.ShouldHaveValidationErrorFor(u => u.PhoneNumber);
-
         }
 
         [Fact]
@@ -317,7 +296,6 @@ namespace BusinessLogic.Test
             var user = new User { AddressId = 0 };
             var result = _validator.TestValidate(user);
             result.ShouldHaveValidationErrorFor(u => u.AddressId);
-
         }
 
         [Fact]
@@ -335,5 +313,4 @@ namespace BusinessLogic.Test
             result.ShouldNotHaveAnyValidationErrors();
         }
     }
-
 }

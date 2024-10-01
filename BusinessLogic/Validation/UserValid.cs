@@ -1,13 +1,12 @@
 ﻿using Domain.Models;
 using FluentValidation;
-using System.Globalization;
+
 
 public class UserValidator : AbstractValidator<User>
 {
     public UserValidator()
     {
-        ValidatorOptions.Global.LanguageManager.Enabled = false; 
-        ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("en"); 
+
 
         RuleFor(user => user.FirstName)
             .NotEmpty().WithMessage("First name is required.")

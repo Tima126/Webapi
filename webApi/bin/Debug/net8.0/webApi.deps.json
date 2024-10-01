@@ -1070,7 +1070,10 @@
           "FluentValidation": "11.10.0"
         },
         "runtime": {
-          "BusinessLogic.dll": {}
+          "BusinessLogic.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DataAccess/1.0.0": {
@@ -1079,7 +1082,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0-rc.1.24451.1"
         },
         "runtime": {
-          "DataAccess.dll": {}
+          "DataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Domain/1.0.0": {
@@ -1087,7 +1093,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0-rc.1.24451.1"
         },
         "runtime": {
-          "Domain.dll": {}
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
