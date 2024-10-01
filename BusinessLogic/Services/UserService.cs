@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.interfaces;
 using Domain.interfaces.Service;
+using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLogic.Services
 {
@@ -42,40 +44,19 @@ namespace BusinessLogic.Services
 
         public async Task Create(User model)
         {
-            if (model == null)
-            {
-                throw new ArgumentNullException(nameof(model));
-            }
+            var validator = new UserValidator();
+            var validationResult = validator.Validate(model);
 
-            if (string.IsNullOrEmpty(model.FirstName))
+            if (!validationResult.IsValid)
             {
-                throw new ArgumentException(nameof(model.FirstName));
-            }
-
-            if (string.IsNullOrEmpty(model.LastName))
-            {
-                throw new ArgumentException(nameof(model.LastName));
-            }
-
-            if (string.IsNullOrEmpty(model.Email))
-            {
-                throw new ArgumentException(nameof(model.Email));
-            }
-
-            if (string.IsNullOrEmpty(model.PhoneNumber))
-            {
-                throw new ArgumentException(nameof(model.PhoneNumber));
-            }
-
-            if (model.AddressId <= 0)
-            {
-                throw new ArgumentException(nameof(model.AddressId));
+                var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
+                var errorMessageString = string.Join(", ", errorMessages);
+                throw new ValidationException(errorMessageString);
             }
 
             await _repositoryWrapper.User.Create(model);
             await _repositoryWrapper.Save();
         }
-
 
 
         public async Task Update(User model)
