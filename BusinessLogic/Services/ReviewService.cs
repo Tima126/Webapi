@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.interfaces.Service;
+using BusinessLogic.Validation;
+using FluentValidation;
 
 namespace BusinessLogic.Services
 {
@@ -29,11 +31,28 @@ namespace BusinessLogic.Services
             var reviewService = await _repositoryWrapper.Review
                 .FindByCondition(x => x.ReviewId == id);
 
+            if (!reviewService.Any())
+            {
+                throw new InvalidOperationException($"Review with id {id} not found.");
+            }
             return reviewService.First();
         }
 
         public async Task Create(Review model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+            var validator = new ReviewValidator();
+            var validationResult = validator.Validate(model);
+
+            if (!validationResult.IsValid)
+            {
+                var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
+                string errorMessageString = string.Join(", ", errorMessages);
+                throw new ValidationException(errorMessageString);
+            }
             await _repositoryWrapper.Review.Create(model);
             await _repositoryWrapper.Save();
         }
@@ -42,6 +61,19 @@ namespace BusinessLogic.Services
 
         public async Task Update(Review model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            var validator = new ReviewValidator();
+            var validationResult = validator.Validate(model);
+            if (!validationResult.IsValid)
+            {
+                var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
+                string errorMessageString = string.Join(", ", errorMessages);
+                throw new ValidationException(errorMessageString);
+            }
             await _repositoryWrapper.Review.Update(model);
             await _repositoryWrapper.Save();
         }
@@ -51,7 +83,10 @@ namespace BusinessLogic.Services
         {
             var supplierProduct = await _repositoryWrapper.Review
                 .FindByCondition(x => x.ReviewId == id);
-
+            if (!supplierProduct.Any())
+            {
+                throw new InvalidOperationException($"Review with id {id} not found");
+            }
             await _repositoryWrapper.Review.Delete(supplierProduct.First());
             await _repositoryWrapper.Save();
         }

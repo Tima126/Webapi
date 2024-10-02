@@ -38,6 +38,10 @@ namespace BusinessLogic.Services
 
         public async Task Create(NotificationType model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
             var validator = new NotificationTypeValid();
             var validationResult = validator.Validate(model);
 
@@ -75,14 +79,14 @@ namespace BusinessLogic.Services
 
         public async Task Delete(int id)
         {
-            var user = await _repositoryWrapper.Notificationtype
+            var nottype = await _repositoryWrapper.Notificationtype
                 .FindByCondition(x => x.NotificationTypeId == id);
 
-            if (!user.Any())
+            if (!nottype.Any())
             {
                 throw new InvalidOperationException($"NotificationType with id {id} not found");
             }
-            await _repositoryWrapper.Notificationtype.Delete(user.First());
+            await _repositoryWrapper.Notificationtype.Delete(nottype.First());
             await _repositoryWrapper.Save();
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Validation
 {
-    public class NotificationTypeValid: AbstractValidator<NotificationType>
+    public class NotificationTypeValid : AbstractValidator<NotificationType>
     {
 
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BusinessLogic.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9670e48cd206689ecf72aa3e233362df8c6f7a44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf7498c03395a75d7c41435d2cb09e1accafd721")]
 [assembly: System.Reflection.AssemblyProductAttribute("BusinessLogic.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BusinessLogic.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

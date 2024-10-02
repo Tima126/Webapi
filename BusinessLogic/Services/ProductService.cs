@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.interfaces.Service;
+using BusinessLogic.Validation;
+using FluentValidation;
 
 namespace BusinessLogic.Services
 {
@@ -28,12 +30,28 @@ namespace BusinessLogic.Services
         {
             var product = await _repositoryWrapper.Product
                 .FindByCondition(x => x.ProductId == id);
-
+            if (!product.Any())
+            {
+                throw new InvalidOperationException($"Product with id {id} not found.");
+            }
             return product.First();
         }
 
         public async Task Create(Product model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+            var validator = new ProductValidator();
+            var validationResult = validator.Validate(model);
+
+            if (!validationResult.IsValid)
+            {
+                var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
+                string errorMessageString = string.Join(", ", errorMessages);
+                throw new ValidationException(errorMessageString);
+            }
             await _repositoryWrapper.Product.Create(model);
             await _repositoryWrapper.Save();
         }
@@ -42,6 +60,19 @@ namespace BusinessLogic.Services
 
         public async Task Update(Product model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
+            var validator = new ProductValidator();
+            var validationResult = validator.Validate(model);
+            if (!validationResult.IsValid)
+            {
+                var errorMessages = validationResult.Errors.Select(error => error.ErrorMessage).ToList();
+                string errorMessageString = string.Join(", ", errorMessages);
+                throw new ValidationException(errorMessageString);
+            }
             await _repositoryWrapper.Product.Update(model);
             await _repositoryWrapper.Save();
         }
@@ -51,7 +82,10 @@ namespace BusinessLogic.Services
         {
             var product = await _repositoryWrapper.Product
                 .FindByCondition(x => x.ProductId == id);
-
+            if (!product.Any())
+            {
+                throw new InvalidOperationException($"Product with id {id} not found");
+            }
             await _repositoryWrapper.Product.Delete(product.First());
             await _repositoryWrapper.Save();
         }

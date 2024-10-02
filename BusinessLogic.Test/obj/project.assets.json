@@ -7585,11 +7585,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic.Test\\BusinessLogic.Test.csproj",
+      "projectUniqueName": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic.Test\\BusinessLogic.Test.csproj",
       "projectName": "BusinessLogic.Test",
-      "projectPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic.Test\\BusinessLogic.Test.csproj",
+      "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic.Test\\BusinessLogic.Test.csproj",
       "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic.Test\\obj\\",
+      "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7600,14 +7600,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic\\BusinessLogic.csproj"
+            "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BusinessLogic\\BusinessLogic.csproj"
             }
           }
         }
@@ -7616,6 +7617,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7659,7 +7665,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
