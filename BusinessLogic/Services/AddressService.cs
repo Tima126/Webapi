@@ -32,7 +32,13 @@ namespace BusinessLogic.Services
 
         public async Task<Address> GetById(int id)
         {
+
             var address = await _repositoryWrapper.Address.FindByCondition(x => x.AddressId == id);
+            if (!address.Any())
+            {
+                throw new InvalidOperationException($"Address with id {id} not found");
+            }
+            
             return address.First();
         }
 

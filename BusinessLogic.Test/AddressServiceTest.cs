@@ -136,7 +136,7 @@ namespace BusinessLogic.Test
         {
             // Arrange
             int addressId = 1;
-            var expectedUser = new Address()
+            var expectedAddress = new Address()
             {
                 AddressId=0,
                 Address1 = "test",
@@ -146,18 +146,18 @@ namespace BusinessLogic.Test
             };
 
             addressRepositoryMoq.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Address, bool>>>()))
-             .ReturnsAsync(new List<Address> { expectedUser });
+             .ReturnsAsync(new List<Address> { expectedAddress });
 
             // Act
             var result = await service.GetById(addressId);
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal(expectedUser.AddressId, result.AddressId);
-            Assert.Equal(expectedUser.Address1, result.Address1);
-            Assert.Equal(expectedUser.City, result.City);
-            Assert.Equal(expectedUser.PostalCode, result.PostalCode);
-            Assert.Equal(expectedUser.Country, result.Country);
+            Assert.Equal(expectedAddress.AddressId, result.AddressId);
+            Assert.Equal(expectedAddress.Address1, result.Address1);
+            Assert.Equal(expectedAddress.City, result.City);
+            Assert.Equal(expectedAddress.PostalCode, result.PostalCode);
+            Assert.Equal(expectedAddress.Country, result.Country);
         }
 
 
