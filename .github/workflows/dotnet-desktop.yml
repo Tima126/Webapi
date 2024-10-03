@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +33,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Test
-      working-directory: Webapi
+      working-directory: webapi
       run: dotnet test --configuration Release --no-build
 
   format:
@@ -45,7 +45,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1'
+        dotnet-version: '8.0'
 
     - name: Install dotnet-format
       run: dotnet tool install -g dotnet-format
