@@ -43,12 +43,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.0'
-    - name: Build
-      working-directory: webApi
-      run: dotnet build --configuration Release
-
+        
     - name: Test
-      run: dotnet test ./BusinessLogic.Test/BusinessLogic.Test.csproj --configuration Release --no-build
+      run: dotnet test ./BusinessLogic.Test/BusinessLogic.Test.csproj --configuration Release
 
   format:
     runs-on: ubuntu-latest
