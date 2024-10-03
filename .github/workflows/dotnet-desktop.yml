@@ -20,9 +20,9 @@ jobs:
       with:
         dotnet-version: '3.1'
     - name: Build
-      working-directory: Webapi/webApi
+      working-directory: WebApi/webApi
       run: dotnet build --configuration Release
 
     - name: Test
-      working-directory: Webapi/webApi
+      working-directory: Webapi/BusinessLogic.Test
       run: dotnet test --configuration Release --no-build
