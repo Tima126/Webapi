@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1'
 
     - name: Cache NuGet packages
-      uses: actions/cache@v3
+      uses: actions/cache@v2
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -29,7 +29,9 @@ jobs:
           ${{ runner.os }}-nuget-
 
     - name: Build
+      working-directory: Webapi/webApi
       run: dotnet build --configuration Release
 
     - name: Test
+      working-directory: Webapi/webApi
       run: dotnet test --configuration Release --no-build
