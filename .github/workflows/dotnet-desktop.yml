@@ -33,7 +33,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Test
-      working-directory: Webapi/BusinessLogic.Test
+      working-directory: Webapi
       run: dotnet test --configuration Release --no-build
 
   format:
