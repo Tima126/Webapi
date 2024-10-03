@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fNCVGX6oqr4=",
+  "dgSpecHash": "58G42WY/N4Uw9P1wnrX4AvM+ftOJ3xVTko+CaxFjEGGKiwlG7aPs1cElRfoESKjrN9E28FIQsK2KvM2WLTvS2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\webApi\\webApi.csproj",
+  "projectFilePath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\webApi\\webApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timaf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",

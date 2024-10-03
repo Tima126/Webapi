@@ -19,6 +19,15 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1'
+
+    - name: Cache NuGet packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
     - name: Build
       working-directory: WebApi/webApi
       run: dotnet build --configuration Release
@@ -26,3 +35,21 @@ jobs:
     - name: Test
       working-directory: Webapi/BusinessLogic.Test
       run: dotnet test --configuration Release --no-build
+
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1'
+
+    - name: Install dotnet-format
+      run: dotnet tool install -g dotnet-format
+
+    - name: Format code
+      working-directory: WebApi/webApi
+      run: dotnet format --verify-no-changes
