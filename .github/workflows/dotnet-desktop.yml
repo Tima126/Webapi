@@ -44,7 +44,8 @@ jobs:
       with:
         dotnet-version: '8.0'
     - name: Build
-      run: dotnet build ./BusinessLogic/BusinessLogic.csproj --configuration Release --no-restore
+      working-directory: webApi
+      run: dotnet build --configuration Release
 
     - name: Test
       run: dotnet test ./BusinessLogic.Test/BusinessLogic.Test.csproj --configuration Release --no-build
