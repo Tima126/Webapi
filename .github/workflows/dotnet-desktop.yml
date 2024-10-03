@@ -46,7 +46,7 @@ jobs:
 
     - name: Test
       working-directory: BusinessLogic.Test
-      run: dotnet test --configuration Release --no-build
+      run: dotnet test ./BusinessLogic.Test/BusinessLogic.Test.csproj --configuration Release --no-build
 
   format:
     runs-on: ubuntu-latest
