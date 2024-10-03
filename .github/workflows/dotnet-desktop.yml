@@ -29,7 +29,7 @@ jobs:
           ${{ runner.os }}-nuget-
 
     - name: Build
-      working-directory: webApi
+      working-directory: ${{ github.workspace }}/webApi
       run: dotnet build --configuration Release
 
   test:
@@ -45,8 +45,9 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Test
-      working-directory: BusinessLogic.Test
+      working-directory: ${{ github.workspace }}/BusinessLogic.Test
       run: dotnet test --configuration Release --no-build
+
   format:
     runs-on: ubuntu-latest
 
@@ -62,5 +63,5 @@ jobs:
       run: dotnet tool install -g dotnet-format
 
     - name: Format code
-      working-directory: webApi
+      working-directory: ${{ github.workspace }}/webApi
       run: dotnet format --verify-no-changes
