@@ -45,7 +45,7 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Test
-      working-directory: webapi/BusinessLogic.Test
+      working-directory: Webapi/BusinessLogic.Test
       run: dotnet test --configuration Release --no-build
 
   format:
