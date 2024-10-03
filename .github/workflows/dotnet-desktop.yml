@@ -43,6 +43,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.0'
+    - name: Build
+      run: dotnet build ./BusinessLogic/BusinessLogic.csproj --configuration Release --no-restore
 
     - name: Test
       run: dotnet test ./BusinessLogic.Test/BusinessLogic.Test.csproj --configuration Release --no-build
