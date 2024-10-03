@@ -32,7 +32,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Test
-      working-directory: C:/Users/timaf/OneDrive/Рабочий стол/restoran (2)/Webapi/
+      working-directory: Webapi/BusinessLogic.Test
       run: dotnet test --configuration Release --no-build
 
   format:
@@ -50,5 +50,5 @@ jobs:
       run: dotnet tool install -g dotnet-format
 
     - name: Format code
-      working-directory: Webapi/webApi/
+      working-directory: Webapi/webApi
       run: dotnet format --verify-no-changes
