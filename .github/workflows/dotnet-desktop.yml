@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,7 +44,7 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Test
-      working-directory: webapi
+      working-directory: webApi
       run: dotnet test --configuration Release --no-build
 
   format:
