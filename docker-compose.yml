@@ -1,20 +1,15 @@
-
 version: '3.4'
+
 services:
   webapi:
     image: ${DOCKER_REGISTRY-}webapi
-
-    
     build:
       context: .
-      dockerfile: .src/Dockerfile
-
-   
+      dockerfile: ./Dockerfile
     environment:
       - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_ENVIRONMENT=Development
-      - Conectionstring=Server=db;Database=Flowers_store
-
+      - Connectionstring=Server=db;Database=Flowers_store
     ports:
       - "5000:80"
     depends_on:
