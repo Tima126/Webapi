@@ -43,3 +43,18 @@ C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\Domain\obj\D
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Battl(Бд)\Webapi\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Battl(Бд)\Webapi\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
+C:\Battl(Бд)\Webapi\Domain\bin\Debug\net8.0\Domain.dll
+C:\Battl(Бд)\Webapi\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.dll
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
+C:\Battl(Бд)\Webapi\Domain\obj\Debug\net8.0\ref\Domain.dll

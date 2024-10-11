@@ -62,3 +62,19 @@ C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogi
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogic\obj\Debug\net8.0\refint\BusinessLogic.dll
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.pdb
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll
+C:\Battl(Бд)\Webapi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.deps.json
+C:\Battl(Бд)\Webapi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.dll
+C:\Battl(Бд)\Webapi\BusinessLogic\bin\Debug\net8.0\BusinessLogic.pdb
+C:\Battl(Бд)\Webapi\BusinessLogic\bin\Debug\net8.0\Domain.dll
+C:\Battl(Бд)\Webapi\BusinessLogic\bin\Debug\net8.0\Domain.pdb
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.sourcelink.json
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CopyComplete
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.dll
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\refint\BusinessLogic.dll
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.pdb
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll

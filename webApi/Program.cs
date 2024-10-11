@@ -18,36 +18,29 @@ namespace webApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Add services to the container.
+            builder.Services.AddControllers();
 
-            builder.Services.AddSwaggerGen(optoins =>
+            // Add Swagger/OpenAPI
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(options =>
             {
-                optoins.SwaggerDoc("v1", new OpenApiInfo
+                options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "API Интернет-магазин цветов",
-                    Description ="Api придназначен для взаимодействием базы данных",
-
-
+                    Description = "Api предназначен для взаимодействия с базой данных",
                 });
 
-                var xmlFilname = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                optoins.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilname));
+                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
 
+            // Register DbContext
             builder.Services.AddDbContext<FlowersStoreContext>(
-                optionsAction: options => options.UseSqlServer(builder.Configuration["ConnectionStrings"]));
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-            var app = builder.Build();
-
-            using (var scope = app.Services.CreateScope())
-            {
-                var service = scope.ServiceProvider;
-                var context = service.GetRequiredService<FlowersStoreContext>();
-
-                context.Database.Migrate();
-            }
-         
+            // Register services
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
@@ -65,21 +58,17 @@ namespace webApi
             builder.Services.AddScoped<ISupplierProductService, SupplierProductService>();
             builder.Services.AddScoped<IWishlistService, WishlistService>();
 
-            builder.Services.AddCors(o => o.AddPolicy("MyPolicy", bulder =>
+            // Add CORS policy
+            builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                bulder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
             }));
 
-            // Add services to the container.
-            builder.Services.AddControllers();
+            var app = builder.Build();
 
-            // Настройка Swagger/OpenAPI
-            builder.Services.AddEndpointsApiExplorer();
-
-
+            
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -92,7 +81,6 @@ namespace webApi
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
             app.UseCors("MyPolicy");
             app.MapControllers();
