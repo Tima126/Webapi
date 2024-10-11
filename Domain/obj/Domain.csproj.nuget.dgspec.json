@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\Domain\\Domain.csproj": {}
+    "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\Domain\\Domain.csproj": {
+    "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\Domain\\obj\\",
+        "outputPath": "C:\\Battl(Бд)\\Webapi\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",

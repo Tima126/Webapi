@@ -35,10 +35,19 @@ namespace webApi
             });
 
             builder.Services.AddDbContext<FlowersStoreContext>(
-                optionsAction: options => options.UseSqlServer(
-                    connectionString: "Server=TIMA;Database=Flowers_store;Trusted_Connection=True;TrustServerCertificate=True;"));
+                optionsAction: options => options.UseSqlServer(builder.Configuration["ConnectionStrings"]));
 
-           
+
+            var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var service = scope.ServiceProvider;
+                var context = service.GetRequiredService<FlowersStoreContext>();
+
+                context.Database.Migrate();
+            }
+         
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IAddressService, AddressService>();
@@ -64,14 +73,6 @@ namespace webApi
 
             }));
 
-
-
-
-            
-
-
-
-
             // Add services to the container.
             builder.Services.AddControllers();
 
@@ -79,7 +80,6 @@ namespace webApi
             builder.Services.AddEndpointsApiExplorer();
 
 
-            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

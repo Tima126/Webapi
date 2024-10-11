@@ -5308,11 +5308,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\webApi\\webApi.csproj",
+      "projectUniqueName": "C:\\Battl(Бд)\\Webapi\\webApi\\webApi.csproj",
       "projectName": "webApi",
-      "projectPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\webApi\\webApi.csproj",
+      "projectPath": "C:\\Battl(Бд)\\Webapi\\webApi\\webApi.csproj",
       "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\webApi\\obj\\",
+      "outputPath": "C:\\Battl(Бд)\\Webapi\\webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5329,11 +5329,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic\\BusinessLogic.csproj"
+            "C:\\Battl(Бд)\\Webapi\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Battl(Бд)\\Webapi\\BusinessLogic\\BusinessLogic.csproj"
             },
-            "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\DataAccess\\DataAccess.csproj"
+            "C:\\Battl(Бд)\\Webapi\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Battl(Бд)\\Webapi\\DataAccess\\DataAccess.csproj"
             }
           }
         }

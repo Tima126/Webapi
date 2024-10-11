@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QN/WDkfnBkVxCfPcZke+JpGWIXr8Pg2eNw1fg3FrTYemxll67nvq6KpCkAGKc47x6K6tEMRTwbp93b9SHa5qJQ==",
+  "dgSpecHash": "LguyD27iCHtlnPigNaB7/vWm4JwXb5r+u6Qm5msGsSdxsDZDdnc+l020XL5Ir6IOoTIoCAVPazJw1yjYweH1/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\timaf\\OneDrive\\Рабочий стол\\restoran (2)\\Webapi\\BusinessLogic.Test\\BusinessLogic.Test.csproj",
+  "projectFilePath": "C:\\Battl(Бд)\\Webapi\\BusinessLogic.Test\\BusinessLogic.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timaf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",
