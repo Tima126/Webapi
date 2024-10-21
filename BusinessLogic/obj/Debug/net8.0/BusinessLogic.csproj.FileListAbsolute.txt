@@ -73,8 +73,8 @@ C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoI
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.sourcelink.json
-C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CopyComplete
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.dll
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\refint\BusinessLogic.dll
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\BusinessLogic.pdb
 C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll
+C:\Battl(Бд)\Webapi\BusinessLogic\obj\Debug\net8.0\Business.CF5D6E35.Up2Date

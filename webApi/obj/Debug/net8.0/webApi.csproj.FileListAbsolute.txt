@@ -915,10 +915,10 @@ C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMulti
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.webApi.props
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\scopedcss\bundle\webApi.styles.css
-C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.csproj.CopyComplete
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.dll
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\refint\webApi.dll
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.xml
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.pdb
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.genruntimeconfig.cache
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\ref\webApi.dll
+C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.csproj.Up2Date

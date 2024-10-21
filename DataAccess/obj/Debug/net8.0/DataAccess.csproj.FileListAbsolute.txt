@@ -79,9 +79,9 @@ C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
-C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CopyComplete
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.dll
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
 C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
