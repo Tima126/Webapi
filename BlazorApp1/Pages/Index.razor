@@ -1,0 +1,90 @@
+﻿    @page "/"
+<h1>Hello</h1>
+
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Название</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Мои проекты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@foreach (var user in result)
+{
+    <p>@user.FirstName @user.LastName</p>
+}
+
+@code
+{
+    public class User
+    {
+        public int UserId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
+        public string PhoneNumber { get; set; }
+        public int AddressId { get; set; }
+    }
+
+    public User[] result = new User[] { };
+
+    string CurrentDate;
+    string CurrentTime;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var date = DateTime.Now;
+        CurrentDate = date.ToShortDateString();
+        CurrentTime = date.ToShortTimeString();
+
+        var client = new HttpClient();
+        client.BaseAddress = new Uri("https://webapi-8.onrender.com/");
+
+        result = await client.GetFromJsonAsync<User[]>("api/User");
+        return;
+
+
+
+    }
+    }
