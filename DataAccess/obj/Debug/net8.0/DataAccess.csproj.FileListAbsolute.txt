@@ -67,3 +67,21 @@ C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\DataAccess\o
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
 C:\Users\timaf\OneDrive\Рабочий стол\restoran (2)\Webapi\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Battl(Бд)\Webapi\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Battl(Бд)\Webapi\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+C:\Battl(Бд)\Webapi\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Battl(Бд)\Webapi\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Battl(Бд)\Webapi\DataAccess\bin\Debug\net8.0\Domain.dll
+C:\Battl(Бд)\Webapi\DataAccess\bin\Debug\net8.0\Domain.pdb
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Battl(Бд)\Webapi\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
