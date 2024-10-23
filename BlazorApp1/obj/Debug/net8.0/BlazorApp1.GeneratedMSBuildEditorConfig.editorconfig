@@ -13,27 +13,27 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BlazorApp1
 build_property.RootNamespace = BlazorApp1
-build_property.ProjectDir = C:\Users\timaf\Desktop\Webapi\BlazorApp1\
+build_property.ProjectDir = C:\Users\timaf\Documents\GitHub\Webapi\BlazorApp1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\timaf\Desktop\Webapi\BlazorApp1
+build_property.MSBuildProjectDirectory = C:\Users\timaf\Documents\GitHub\Webapi\BlazorApp1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/timaf/Desktop/Webapi/BlazorApp1/App.razor]
+[C:/Users/timaf/Documents/GitHub/Webapi/BlazorApp1/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/timaf/Desktop/Webapi/BlazorApp1/Pages/Index.razor]
+[C:/Users/timaf/Documents/GitHub/Webapi/BlazorApp1/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/timaf/Desktop/Webapi/BlazorApp1/_Imports.razor]
+[C:/Users/timaf/Documents/GitHub/Webapi/BlazorApp1/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/timaf/Desktop/Webapi/BlazorApp1/MainLayout.razor]
+[C:/Users/timaf/Documents/GitHub/Webapi/BlazorApp1/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-ankw9vxoue

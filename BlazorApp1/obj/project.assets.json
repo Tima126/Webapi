@@ -2064,11 +2064,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timaf\\Desktop\\WebApi\\BlazorApp1\\BlazorApp1.csproj",
+      "projectUniqueName": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BlazorApp1\\BlazorApp1.csproj",
       "projectName": "BlazorApp1",
-      "projectPath": "C:\\Users\\timaf\\Desktop\\WebApi\\BlazorApp1\\BlazorApp1.csproj",
+      "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BlazorApp1\\BlazorApp1.csproj",
       "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timaf\\Desktop\\WebApi\\BlazorApp1\\obj\\",
+      "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\BlazorApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
