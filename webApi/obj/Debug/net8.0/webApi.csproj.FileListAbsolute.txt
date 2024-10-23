@@ -922,3 +922,12 @@ C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.pdb
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.genruntimeconfig.cache
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\ref\webApi.dll
 C:\Battl(Бд)\Webapi\webApi\obj\Debug\net8.0\webApi.csproj.Up2Date
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.AssemblyInfoInputs.cache
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.AssemblyInfo.cs
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.csproj.CoreCompileInputs.cache
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.sourcelink.json
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.dll
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\refint\webApi.dll
+C:\Users\timaf\Desktop\Webapi\webApi\obj\Debug\net8.0\webApi.pdb
