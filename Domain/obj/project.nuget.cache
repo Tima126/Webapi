@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lqZKEulhw44=",
+  "dgSpecHash": "6ItisWm2aZE=",
   "success": true,
-  "projectFilePath": "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timaf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\timaf\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",

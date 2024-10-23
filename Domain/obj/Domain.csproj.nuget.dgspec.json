@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj": {}
+    "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj": {
+    "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Battl(Бд)\\Webapi\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\timaf\\.nuget\\packages\\",
-        "outputPath": "C:\\Battl(Бд)\\Webapi\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\timaf\\Documents\\GitHub\\Webapi\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
